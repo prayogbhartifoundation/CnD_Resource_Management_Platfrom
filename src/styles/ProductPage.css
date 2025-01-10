@@ -1,0 +1,58 @@
+src/styles/ProductPage.css
+
+.product-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.product-details {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.product-images {
+  flex: 1;
+  background-color: #f1f1f1;
+  padding: 2rem;
+  text-align: center;
+}
+
+.agency-info {
+  flex: 2;
+  background-color: #e9ecef;
+  padding: 1rem;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  background-color: #ffc107;
+  color: #212529;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.material-reports {
+  margin-top: 2rem;
+}
+
+.doc-cards {
+  display: flex;
+  gap: 1rem;
+}
+
+footer {
+  background-color: #343a40;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
