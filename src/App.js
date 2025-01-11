@@ -2,7 +2,9 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import InventoryStatusPage from "./pages/InventoryStatusPage";
+import AgencyPage from "./pages/AgencyPage";
 import ProductPage from "./pages/ProductPage";
+import ContactUsPage from "./pages/ContactUsPage";
 
 function App() {
   return (
@@ -24,7 +26,9 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/inventory" element={<InventoryStatusPage />} />
+          <Route path="/agencies" element={<AgencyPage />} />
           <Route path="/product" element={<ProductPage />} />
+          <Route path="/contact" element={<ContactUsPage />} />
         </Routes>
       </main>
 

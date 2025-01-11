@@ -1,33 +1,12 @@
-/* src/styles/HomePage.css
-
 .home-page {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-header {
-  background-color: #f8f9fa;
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.branding {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-}
-
-main {
-  flex: 1;
   padding: 2rem;
+}
+
+.overview-details {
+  background-color: #e8f7fc;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 .overview-details ul {
@@ -35,25 +14,33 @@ main {
   padding: 0;
 }
 
-.statuses button {
-  margin: 0.5rem;
+.statuses {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.status-button {
   padding: 0.75rem 1.5rem;
   background-color: #007bff;
-  color: #fff;
+  color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
 .agency-cards {
   display: flex;
   gap: 1rem;
-  margin-top: 1rem;
+  justify-content: center;
 }
 
-footer {
-  background-color: #343a40;
-  color: #fff;
-  text-align: center;
+.card {
+  background-color: #f1f1f1;
   padding: 1rem;
-} */
+  border-radius: 8px;
+  text-align: center;
+  flex: 1;
+  min-width: 200px;
+}

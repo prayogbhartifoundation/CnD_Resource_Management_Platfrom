@@ -1,11 +1,10 @@
-/* General Page Styles */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #f8f9fa;
 }
 
-/* Header Styles */
+/* Header */
 .app-header {
   display: flex;
   align-items: center;
@@ -29,10 +28,6 @@ nav ul {
   padding: 0;
 }
 
-nav ul li {
-  display: inline-block;
-}
-
 nav ul li a {
   text-decoration: none;
   padding: 0.5rem 1rem;
@@ -46,12 +41,17 @@ nav ul li a:hover {
   background-color: #28a745;
 }
 
-/* Footer Styles */
+/* Footer */
 .app-footer {
   background-color: #4c4c4c;
   color: white;
   text-align: center;
   padding: 1.5rem 0;
-  font-size: 1.2rem;
-  margin-top: auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
 }
