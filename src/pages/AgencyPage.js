@@ -11,13 +11,16 @@ function AgencyPage() {
      
       {/* Branding Section */}
       <section className="branding-section">
-    <div className="branding-card logo-card">Agency Branding (Logo)</div>
-    <div className="branding-card branding-highlights">
-      Agency Branding Highlights, Messages
-    </div>
-    <div className="branding-card incharge-card">Agency Incharge</div>
-  </section>
-      
+        <div className="branding-card">
+          <p>Agency Branding (Logo)</p>
+        </div>
+        <div className="branding-details">
+          <h3>Agency Branding Highlights, Messages</h3>
+        </div>
+        <div className="branding-card">
+          <p>Agency Incharge</p>
+        </div>
+      </section>
 
       {/* Waste Processing Section */}
       <section className="waste-processing-details">

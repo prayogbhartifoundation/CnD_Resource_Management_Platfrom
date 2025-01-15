@@ -11,48 +11,50 @@ body {
   justify-content: center;
   align-items: center;
   height: 12vh;
-  background-color: #070707;
+  background-color: #4c4c4c;
 }
-
 .inventory-header h1 {
   margin: 0;
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #ffffff;
 }
 
 /* Main Content Layout */
 .inventory-content {
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
-  gap: 1rem;
+  gap: 2rem;
 }
-
 .inventory-layout {
   display: flex;
-  flex-direction: row;
+  flex-direction: row; /* Place sections side by side */
   gap: 1rem;
+  flex-wrap: wrap; /* Allow wrapping for responsiveness */
+  align-items: flex-start; /* Align sections at the top */
 }
 
 /* Product List Section */
 .product-list-container {
-  width: 200px;
-  background-color: #b8e0e6;
+  flex: 0 0 25%; /* Fixed width of 25% */
+  max-width: 10%; /* Prevent exceeding 25% */
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  background-color: #d5f2f7;
   padding: 1rem;
   border-radius: 8px;
+  margin-top: 1rem;
 }
-
-.product-header {
-  font-size: 1.2rem;
+.product-heading {
+  font-size: 1.5rem;
   color: #4c4c4c;
-  margin-bottom: 0.9rem;
   text-align: center;
+  margin-bottom: 0.7rem;
 }
-
 .product-item {
-  background-color: #c0c3c3;
+  background-color: #ffffff;
   padding: 0.8rem;
-  margin: 1rem;
   border-radius: 6px;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -60,92 +62,87 @@ body {
 
 /* Table Section */
 .table-section {
-  flex: 1;
-  background-color: white;
+  flex: 1; /* Take the remaining space */
+  max-width: 75%; /* Prevent exceeding 75% */
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 8px;
 }
-
 .inventory-table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 1rem;
 }
-
 .inventory-table th {
-  background-color: #79d1d4;
+  background-color: #5bc3c8;
   color: white;
   padding: 1rem;
 }
-
 .inventory-table td {
   text-align: center;
-  padding: 0.8rem;
+  padding: 1rem;
   border: 1px solid #ddd;
 }
-
 .inventory-table small {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: #555;
 }
 
 /* Action Button */
-.container-button{
-  align-self: center;
+.button-container {
+  text-align: center;
 }
 .query-button {
-  margin: 1rem 0;
-  padding: 2rem 2rem;
-  width: 100%;
-  background-color: #d3dede;
-  color: #000000;
+  padding: 0.8rem 2rem;
+  background-color: #d1dede;
   border: none;
   border-radius: 6px;
-  font-size: 0.9rem;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
   cursor: pointer;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 .query-button:hover {
   background-color: #b8c8c8;
 }
 
 /* Document Section */
 .document-section {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
   text-align: center;
 }
-
 .document-section h2 {
-  background-color: #79d1d4;
-  color: #ffffff;
+  margin-bottom: 1rem;
+  color: #4c4c4c;
   padding: 1rem;
-  border-radius: 5px;
+  background-color: #d5f2f7;
 }
-
-
 .document-cards {
   display: flex;
   justify-content: space-around;
   gap: 1rem;
+  padding: 6rem;
 }
-.document-cards :hover {
-  background-color: #b8c8c8;
-}
-
 .doc-card {
   flex: 1;
-  max-width: 200px;
-  background-color: #d3dede;
-  padding: 7rem;
+  background-color: #e7ebed;
+  padding: 8rem;
   border-radius: 6px;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+.doc-card:hover {
+  background-color: #b8c8c8;
+}
 
-/* Footer */
-.app-footer {
-  width: 100%;
-  background-color: #4c4c4c;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  font-size: 1.2rem;
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .inventory-layout {
+    flex-direction: column; /* Stack sections vertically */
+  }
+  .product-list-container,
+  .table-section {
+    flex: 1 1 100%; /* Full width for smaller screens */
+    max-width: 100%; /* Prevent overflow */
+  }
 }

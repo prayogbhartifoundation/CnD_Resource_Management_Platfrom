@@ -40,6 +40,13 @@
   color: black;
 }
 
+.branding-details {
+  background-color: #e7ebed ;
+  padding: 10rem;
+  border-radius: 8px;
+  
+}
+
 .logo-card {
   grid-area: logo;
   padding: 7rem;
@@ -171,8 +178,8 @@
 
 .doc-button {
   background-color: #e7ebed;
-  padding: 150px;
-  margin: 100px;
+  padding: 140px;
+  margin: 30px;
   border: none;
   border-radius: 8px;
   font-size: 1rem;
