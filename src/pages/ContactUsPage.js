@@ -49,8 +49,6 @@ function ContactUsPage() {
           <button type="submit" className="submit-button">Send Message</button>
         </form>
       </section>
-
-      <footer className="contact-footer">Page Footer</footer>
     </div>
   );
 }

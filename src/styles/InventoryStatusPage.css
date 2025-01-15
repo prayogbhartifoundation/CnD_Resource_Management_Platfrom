@@ -132,9 +132,9 @@ body {
 
 .doc-card {
   flex: 1;
-  max-width: 500px;
+  max-width: 200px;
   background-color: #d3dede;
-  padding: 5rem;
+  padding: 7rem;
   border-radius: 6px;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);

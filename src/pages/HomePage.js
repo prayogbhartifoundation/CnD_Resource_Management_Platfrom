@@ -5,13 +5,18 @@ function HomePage() {
   return (
     <div className="home-page">
       <section className="overview-details">
-        <h2>Plant Agency Overview Details</h2>
-        <ul>
-          <li>Location</li>
-          <li>Waste Received</li>
-          <li>Type of Processed Material</li>
-          <li>Plant Capacity</li>
-        </ul>
+        <div className="agency-branding">
+          <h2>agency Branding</h2>
+        </div>
+        <div className="plant-agency">
+          <h2>Plant Agency Overview Details</h2>
+          <ul>
+            <li>Location</li>
+            <li>Waste Received</li>
+            <li>Type of Processed Material</li>
+            <li>Plant Capacity</li>
+          </ul>
+        </div>
       </section>
 
       <section className="statuses">
