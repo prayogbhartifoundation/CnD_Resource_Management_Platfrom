@@ -1,94 +1,208 @@
 /* General Layout */
 .agency-page {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Header Section */
+.header-section {
+  background-color: #4c4c4c;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+/* Branding Section Layout */
+.branding-section {
+  display: grid;
+  grid-template-areas:
+    "logo branding"
+    "incharge branding";
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+  background-color: #54c0ca;
+  padding: 16px;
+  border-radius: 8px;
+  margin: 16px 0;
+}
+
+.branding-card {
+  background-color: #e7ebed;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: bold;
+  color: black;
+}
+
+.logo-card {
+  grid-area: logo;
+  padding: 7rem;
+}
+
+.branding-highlights {
+  grid-area: branding;
+}
+
+.incharge-card {
+  grid-area: incharge;
+}
+
+/* Waste Processing Section */
+.waste-processing-details {
+  background-color: #bce0e6;
+  padding: 16px;
+  border-radius: 8px;
+  margin: 24px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  background-color: #54c0ca;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.waste-details-layout {
+  display: grid;
+  grid-template-areas:
+    "capacity material"
+    "contact material"
+    "operation operation";
+  grid-template-columns: 1fr 2fr;
+  gap: 16px;
+}
+
+.detail-card {
+  background-color: #e7ebed;
+  padding: 40px;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: bold;
+  color: black;
+}
+
+.waste-capacity-card {
+  grid-area: capacity;
+  padding: 0rem;
+}
+
+.material-quantities-card {
+  grid-area: material;
+}
+
+.contact-details-card {
+  grid-area: contact;
+}
+
+.operation-details-card {
+  grid-area: operation;
+  padding: 10rem;
+}
+
+/* Responsive Adjustments */
+
+/* Tablet View (768px and below) */
+@media (max-width: 768px) {
+  .branding-section, .waste-details-layout {
+    grid-template-areas:
+      "logo"
+      "branding"
+      "incharge";
+    grid-template-columns: 1fr;
   }
-  
-  .agency-header {
-    text-align: center;
-    margin-bottom: 2rem;
-    background-color: #f0f8ff;
-    padding: 1rem;
-    border-radius: 8px;
+
+  .waste-details-layout {
+    grid-template-areas:
+      "capacity"
+      "material"
+      "contact"
+      "operation";
   }
-  
-  /* Branding Section */
-  .branding-section {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 2rem;
+}
+
+/* Mobile View (480px and below) */
+@media (max-width: 480px) {
+  .branding-card, .detail-card {
+    padding: 1.5rem;
+    font-size: 0.9rem;
   }
-  
-  .branding-card, .branding-details {
-    background-color: #e8f7fc;
-    padding: 1rem;
-    border-radius: 8px;
-    flex: 1;
-    text-align: center;
+
+  .branding-section, .waste-details-layout {
+    grid-template-columns: 1fr;
   }
-  
-  /* Waste Processing Section */
-  .waste-processing-details {
-    margin-bottom: 2rem;
-  }
-  
-  .details-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-  }
-  
-  .detail-card {
-    background-color: #f1f1f1;
-    padding: 1rem;
-    border-radius: 8px;
-    text-align: center;
-  }
-  
-  /* Compliance Section */
-  .compliance-section {
-    margin-bottom: 2rem;
-  }
-  
+}
+
+/* Utility for Box Sizing */
+* {
+  box-sizing: border-box;
+}
+/* Compliance Section */
+.compliance-section {
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: 8px;
+  margin: 24px 0;
+  text-align: center;
+}
+
+.compliance-section h3 {
+  color: white;
+  background-color: #54c0ca;
+  padding: 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.doc-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap; /* Ensures responsiveness for smaller screens */
+}
+
+.doc-button {
+  background-color: #e7ebed;
+  padding: 150px;
+  margin: 100px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  min-width: 150px; /* Ensures consistent button size */
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.doc-button:hover {
+  background-color: #d0d7db;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
   .doc-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+    gap: 12px; /* Slightly smaller gap on tablet view */
   }
-  
+
   .doc-button {
-    padding: 0.75rem 1.5rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    flex: 1;
+    min-width: 120px; /* Smaller minimum width on tablet view */
   }
-  
-  .doc-button:hover {
-    background-color: #0056b3;
+}
+
+@media (max-width: 480px) {
+  .doc-button {
+    font-size: 0.9rem; /* Smaller font size on mobile */
+    padding: 15px; /* Adjust padding for better fit */
   }
-  
-  /* Footer */
-  .agency-footer {
-    background-color: #4c4c4c;
-    color: white;
-    text-align: center;
-    padding: 1.5rem 0;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .branding-section {
-      flex-direction: column;
-    }
-  
-    .doc-buttons {
-      flex-direction: column;
-    }
-  }
-  
+}
+
