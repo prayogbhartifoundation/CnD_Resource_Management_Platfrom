@@ -18,7 +18,7 @@ body {
   height: 50px;
   border-radius: 50%;
   background-color: #a4d6a3;
-}
+} 
 
 nav ul {
   list-style: none;
@@ -50,8 +50,9 @@ nav ul li a:hover {
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
+
+ @media (max-width: 768px) {
   nav ul {
     flex-direction: column;
   }
-}
+} 

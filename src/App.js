@@ -1,11 +1,11 @@
 import React from "react";
-import './App.css';
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import InventoryStatusPage from "./pages/InventoryStatusPage";
 import AgencyPage from "./pages/AgencyPage";
 import ProductPage from "./pages/ProductPage";
 import ContactUsPage from "./pages/ContactUsPage";
+import './App.css';
 
 function App() {
   return (
@@ -37,5 +37,4 @@ function App() {
     </Router>
   );
 }
-
 export default App;
