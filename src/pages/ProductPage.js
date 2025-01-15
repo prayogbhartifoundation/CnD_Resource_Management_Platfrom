@@ -1,41 +1,45 @@
-import React from "react"; 
+import React from "react";
 import "../styles/ProductPage.css";
 
 function ProductPage() {
   return (
     <div className="product-page">
-      <main>
+      {/* Header Section */}
+      <header>
         <h2>Product Name</h2>
+      </header>
 
+      {/* Main Content */}
+      <main>
+        {/* Top Section: Product Images and Agency Info */}
         <section className="product-details">
           <div className="product-images">
-            {/* Placeholder for images */}
             <p>Product Images</p>
           </div>
-
           <div className="agency-info">
             <h3>Agency Name & Location</h3>
-            <p>List of agencies with their locations providing this product</p>
-            <button className="action-button">Raise Product Requirement Ticket</button>
-            <button className="action-button">Product DSR</button>
+            <p>
+              List of Agencies with their Locations which provides this Product
+            </p>
           </div>
         </section>
 
+        {/* Middle Buttons Section */}
+        <section className="middle-buttons">
+          <button>Raise Product Requirement Ticket</button>
+          <button>Product DSR</button>
+          <button>Product Details</button>
+          <button>Product Processing Steps</button>
+          <button>Department-Wise Requirements</button>
+        </section>
+
+        {/* Bottom Section: Material Test Reports */}
         <section className="material-reports">
-          <h3>Material Test Reports for this Product</h3>
+          <h3>Material Test Reports for this Product Plant-wise</h3>
           <div className="doc-cards">
-            <div className="card">
-              <h4>Document 1</h4>
-              <p>Details for Document 1</p>
-            </div>
-            <div className="card">
-              <h4>Document 2</h4>
-              <p>Details for Document 2</p>
-            </div>
-            <div className="card">
-              <h4>Document 3</h4>
-              <p>Details for Document 3</p>
-            </div>
+            <div className="card">Doc Button card</div>
+            <div className="card">Doc Button card</div>
+            <div className="card">Doc Button card</div>
           </div>
         </section>
       </main>
