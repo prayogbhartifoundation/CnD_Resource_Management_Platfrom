@@ -1,32 +1,89 @@
 .home-page {
-  padding: 2rem;
+  padding: 1rem;
+  background-color: white;
 }
 
 .overview-details {
-  background-color: #e8f7fc;
+  background-color: rgb(245, 243, 252);
+  box-shadow: 2px 2px 6px 2px rgb(236, 229, 254);
+  border: 2px solid rgb(236, 229, 254);
   padding: 1rem;
-  /* margin-bottom: 2rem; */
-  margin:-32px -32px 2rem -32px;
-  text-align: center;
+  /* width: 100%; */
+  /* text-align: center; */
+  border-radius: 30px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
-.agency-branding{
-  background-color:#f1f1f1;
-  padding:30px;
-  height:100px;
-  margin-top:70px;
-  margin-right:400px;
+.overview-details>div{
+  /* border: 1px solid #ebe9e9; */
+  box-shadow: 2px 2px 4px 2px rgb(222, 210, 255)  ;
+}
+
+.overview-details .leftPanel{
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+  padding: 1rem;
   border-radius: 20px;
 }
 
-.plant-agency{
-  background-color:#f1f1f1;
-  padding:50px;
+.agency-branding{
+  background-color:#ffffff;
+  padding:30px;
+  height:110px;
   border-radius: 20px;
+
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-evenly;
 }
+
+.agency-branding>div{
+  width: 50px;
+  aspect-ratio: 1;
+  background-color: rgb(10, 229, 10);
+  border-radius: 50%;
+  box-shadow: 0 0 10px 2px rgb(180, 255, 114)  ;
+}
+
+.overview-details .leftPanel div:last-child{
+  /* height: 30px; */
+  text-align: center;
+  
+  background-color:#ffffff;
+  padding:10px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+.overview-details .leftPanel div:last-child h2{
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.overview-details .leftPanel>div{
+  /* border: 1px solid #ebe9e9; */
+  box-shadow: 2px 2px 4px 2px rgb(222, 210, 255)  ;
+}
+
+
+.plant-agency{
+  background-color:rgb(255, 255, 255);
+  padding:34px;
+  border-radius: 20px;
+
+  min-width: 70%;
+}
+
 
 
 .overview-details ul {
@@ -34,36 +91,55 @@
   padding: 0;
 }
 
-.statuses {
+
+
+
+
+.action-btns {
+  padding: 30px;
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  gap: 2rem;
 }
 
 .status-button {
   padding: 0.75rem 1.5rem;
-  background-color: #007bff;
+  background-color: #621de1;
+   box-shadow: 2px 2px 6px 2px rgb(208, 192, 251);
   color: white;
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 1px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
+.status-button:hover{
+  background-color: rgb(19, 173, 19);
+  box-shadow: 0 0 6px 2px rgb(195, 254, 175);
+}
+
 .agency-cards {
+  padding: 1rem;
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   
 }
 
-.card {
-  background-color: #f1f1f1;
+.agency-cards .card {
+  /* background-color: #f1f1f1; */
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2px 2px 6px 2px rgb(236, 229, 254);
+  border: 2px solid rgb(236, 229, 254);
+  min-width: 300px;
   padding: 1rem;
   border-radius: 8px;
   text-align: center;
   flex: 1;
-  min-width: 200px;
 }
 
 @media only screen and (max-width: 768px) {

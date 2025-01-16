@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import InventoryStatusPage from "./pages/InventoryStatusPage";
@@ -6,8 +6,13 @@ import AgencyPage from "./pages/AgencyPage";
 import ProductPage from "./pages/ProductPage";
 import ContactUsPage from "./pages/ContactUsPage";
 import './App.css';
+import Sidebar from "./components/Sidebar";
+import OfftakeStatusPage from "./pages/OfftakeStatusPage";
 
 function App() {
+
+  const [sideBarOpen, setSideBarOpen] = useState(false)
+
   return (
     <Router>
       <header className="app-header">
@@ -21,12 +26,17 @@ function App() {
             <li><Link to="/contact">Contact Us</Link></li>
           </ul>
         </nav>
+
+        <div className="hamburger" onClick={() => setSideBarOpen(!sideBarOpen)}>📄</div>
       </header>
+
+      {sideBarOpen && <Sidebar setSideBarOpen={setSideBarOpen}/>}
 
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/inventory" element={<InventoryStatusPage />} />
+          <Route path="/offtake" element={<OfftakeStatusPage />} />
           <Route path="/agencies" element={<AgencyPage />} />
           <Route path="/product" element={<ProductPage />} />
           <Route path="/contact" element={<ContactUsPage />} />

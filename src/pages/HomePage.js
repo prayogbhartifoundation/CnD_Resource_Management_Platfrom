@@ -1,17 +1,26 @@
 import React from "react";
 import "../styles/HomePage.css";
+import { useNavigate } from "react-router-dom";
 
 function HomePage() {
+  const navigate = useNavigate()
   return (
     <div className="home-page">
       <section className="overview-details">
-        <div className="agency-branding">
-          <h2>agency Branding</h2>
+
+        <div className="leftPanel">
+          <div className="agency-branding">
+            <div className="logo"></div>
+            <h2>agency Branding</h2>
+          </div>
+          <div >
+            <h2>Plant Location</h2>
+          </div>
         </div>
+
         <div className="plant-agency">
-          <h2>Plant Agency Overview Details</h2>
+          <h2>Plant Overview</h2>
           <ul>
-            <li>Location</li>
             <li>Waste Received</li>
             <li>Type of Processed Material</li>
             <li>Plant Capacity</li>
@@ -19,9 +28,9 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="statuses">
-        <button className="status-button">Offtake Status</button>
-        <button className="status-button">Inventory Status</button>
+      <section className="action-btns">
+        <button type="button" onClick={() => navigate('/offtake')} className="status-button">Offtake Status</button>
+        <button type="button" onClick={() => navigate('/inventory')} className="status-button">Inventory Status</button>
       </section>
 
       <section className="agency-cards">

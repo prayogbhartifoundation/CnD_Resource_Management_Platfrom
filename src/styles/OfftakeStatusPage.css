@@ -1,0 +1,46 @@
+.offtakeStatusPage{
+    padding: 1rem 0.5rem;
+}
+
+.offtakeStatusPage h1{
+    text-align: center;
+    font-size: 24px;
+}
+
+.offtakeStatusPage .TableCont{
+    width: 100%;
+    overflow-x: auto;
+    /* border: 1px solid #000; */
+    margin-bottom: 30px;
+}
+
+.offtakeStatusPage table{
+    border-collapse: collapse;
+}
+
+.offtakeStatusPage table th, .offtakeStatusPage table td{
+    border: 1px solid #000;
+}
+
+.offtakeStatusPage table th{
+    min-width: 200px
+}
+
+.offtakeStatusPage table th:first-child{
+    min-width: 70px;
+}
+
+.offtakeStatusPage table tbody tr td:first-child{
+    text-align: center;
+}
+.offtakeStatusPage table tbody tr td:nth-child(2){
+    text-align: left;
+}
+.offtakeStatusPage table tbody tr td{
+    text-align: right;
+    padding: 10px;
+}
+
+.offtakeStatusPage table tbody tr:last-child td{
+    background-color: yellow;
+}
