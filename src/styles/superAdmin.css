@@ -1,0 +1,29 @@
+.section2{
+    width: 100%;
+    padding: 15px 0;
+}
+
+.section2 table{
+
+    width: 95%;
+    margin: auto;
+
+    border-collapse: collapse;
+}
+
+.section2 table th,
+.section2 table td{
+    border: 1px solid #000;
+}
+
+.section2 table th{
+    background-color: yellow;
+}
+
+.section2 table tbody td{
+    text-align: center;
+
+.section2 table tbody td:first-child{
+    font-weight: bold;
+}
+}

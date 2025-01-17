@@ -8,6 +8,15 @@ import ContactUsPage from "./pages/ContactUsPage";
 import './App.css';
 import Sidebar from "./components/Sidebar";
 import OfftakeStatusPage from "./pages/OfftakeStatusPage";
+import SuperAdminLogin from "./pages/superAdminPages/SuperAdminLogin";
+import SuperAdminHome from "./pages/superAdminPages/SuperAdminHome";
+import SuperAdminReg from "./pages/superAdminPages/SuperAdminReg";
+import AgencyLogin from "./pages/AgencyPages/AgencyLogin";
+import AgencyHome from "./pages/AgencyPages/AgencyHome";
+import AgencyResetPassword from "./pages/AgencyPages/AgencyResetPassword";
+import PlantHome from "./pages/PlantPages/PlantHome";
+import PlantLogin from "./pages/PlantPages/PlantLogin";
+import PlantResetPassword from "./pages/PlantPages/PlantResetPassword";
 
 function App() {
 
@@ -24,6 +33,8 @@ function App() {
             <li><Link to="/product">Products</Link></li>
             <li><Link to="/agencies">Agencies</Link></li>
             <li><Link to="/contact">Contact Us</Link></li>
+            <li><Link to="/agency-home">Agent Page</Link></li>
+            <li><Link to="/plant-home">Plant Page</Link></li>
           </ul>
         </nav>
 
@@ -40,6 +51,15 @@ function App() {
           <Route path="/agencies" element={<AgencyPage />} />
           <Route path="/product" element={<ProductPage />} />
           <Route path="/contact" element={<ContactUsPage />} />
+          <Route path="/s_admin-reg" element={<SuperAdminReg />} />
+          <Route path="/s_admin-login" element={<SuperAdminLogin />} />
+          <Route path="/s_admin" element={<SuperAdminHome />} />
+          <Route path="/agency-login" element={<AgencyLogin />} />
+          <Route path="/agency-home" element={<AgencyHome />} />
+          <Route path="/reset-password" element={<AgencyResetPassword />} />
+          <Route path="/plant-login" element={<PlantLogin />} />
+          <Route path="/reset-password-plant" element={<PlantResetPassword />} />
+          <Route path="/plant-home" element={<PlantHome />} />
         </Routes>
       </main>
 
