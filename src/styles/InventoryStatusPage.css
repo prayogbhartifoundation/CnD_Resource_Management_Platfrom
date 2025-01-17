@@ -139,16 +139,22 @@ background-color: white;
 }
 
 .query-button {
-  padding: 0.8rem 2rem;
-  background-color: #d1dede;
+  padding: 0.75rem 1.5rem;
+  background-color: #662D91;
+  color: white;
   border: none;
-  border-radius: 6px;
-  font-size: 1rem;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
   cursor: pointer;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 6px 2px rgb(208, 192, 251);
 }
+
 .query-button:hover {
-  background-color: #b8c8c8;
+  background-color: #E1594F;
+  box-shadow: 0 0 6px 2px rgb(195, 254, 175);
+  color:black;
 }
 
 /* Document Section */
@@ -172,15 +178,13 @@ background-color: white;
 }
 .doc-card {
   flex: 1;
-  background-color: #e7ebed;
+  background-color: rgb(255, 255, 255);;
   padding: 8rem;
   border-radius: 6px;
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 6px 2px rgb(236, 229, 254);
 }
-.doc-card:hover {
-  background-color: #b8c8c8;
-}
+
 
 
 
