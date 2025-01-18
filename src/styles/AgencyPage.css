@@ -40,6 +40,13 @@
   color: black;
 }
 
+.branding-details {
+  background-color: #e7ebed ;
+  padding: 10rem;
+  border-radius: 8px;
+  
+}
+
 .logo-card {
   grid-area: logo;
 }

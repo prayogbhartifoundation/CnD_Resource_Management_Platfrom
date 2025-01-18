@@ -104,8 +104,8 @@
 
 .status-button {
   padding: 0.75rem 1.5rem;
-  background-color: #621de1;
-   box-shadow: 2px 2px 6px 2px rgb(208, 192, 251);
+  background-color: #662D91;
+  box-shadow: 2px 2px 6px 2px rgb(208, 192, 251);
   color: white;
   font-weight: bold;
   font-size: 16px;
@@ -116,8 +116,9 @@
 }
 
 .status-button:hover{
-  background-color: rgb(19, 173, 19);
+  background-color: #E1594F;
   box-shadow: 0 0 6px 2px rgb(195, 254, 175);
+  color:black;
 }
 
 .agency-cards {
