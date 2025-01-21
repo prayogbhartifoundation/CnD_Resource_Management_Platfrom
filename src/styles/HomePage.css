@@ -116,9 +116,8 @@
 }
 
 .status-button:hover{
-  background-color: #E1594F;
-  box-shadow: 0 0 6px 2px rgb(195, 254, 175);
-  color:black;
+  background-color: #3d1b57;
+  box-shadow: 0 0 4px 1px #3d1b57
 }
 
 .agency-cards {

@@ -10,7 +10,7 @@
 
 /* Header Section */
 .header-section {
-  background-color: #4c4c4c;
+  background: linear-gradient(to right, #662D91 0.05%, #AC466C 79.07%, #E1594F 99.96%);background-color: #4c4c4c;
   color: white;
   text-align: center;
   padding: 1rem;
@@ -40,12 +40,7 @@
   color: black;
 }
 
-.branding-details {
-  background-color: #e7ebed ;
-  padding: 10rem;
-  border-radius: 8px;
-  
-}
+
 
 .logo-card {
   grid-area: logo;
@@ -72,10 +67,11 @@
 
 /* Waste Processing Section */
 .waste-processing-details {
-  background-color: #bce0e6;
+  
   padding: 16px;
   border-radius: 8px;
   margin: 24px 0;
+  background-color: #54c0ca;
 }
 
 .section-title {
@@ -83,9 +79,10 @@
   font-size: 1.5rem;
   color: white;
   margin-bottom: 1.5rem;
-  background-color: #54c0ca;
-  padding: 12px;
-  border-radius: 6px;
+  background: linear-gradient(to right, #662D91 0.05%, #AC466C 79.07%, #E1594F 99.96%);
+  padding: 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .waste-details-layout {
@@ -135,7 +132,7 @@
 
 .compliance-section h3 {
   color: white;
-  background-color: #54c0ca;
+  background: linear-gradient(to right, #662D91 0.05%, #AC466C 79.07%, #E1594F 99.96%);
   padding: 1rem;
   font-size: 1.5rem;
   margin-bottom: 1.5rem;

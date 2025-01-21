@@ -28,7 +28,7 @@ function App() {
         <div className="branding"></div>
         <nav>
           <ul>
-            <li><Link to="/">Home</Link></li>
+            <li><Link to="/">Home<b></b></Link></li>
             <li><Link to="/inventory">Inventory Status</Link></li>
             <li><Link to="/product">Products</Link></li>
             <li><Link to="/agencies">Agencies</Link></li>

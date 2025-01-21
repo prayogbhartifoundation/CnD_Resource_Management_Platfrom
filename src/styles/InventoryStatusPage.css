@@ -11,12 +11,13 @@ body {
   justify-content: center;
   align-items: center;
   height: 12vh;
-  background-color: #4c4c4c;
+  background: linear-gradient(to left, #662D91 0.05%, #AC466C 79.07%, #E1594F 99.96%);
 }
 .inventory-header h1 {
   margin: 0;
   font-size: 2rem;
   color: #ffffff;
+  text-align: center;
 }
 
 /* Main Content Layout */
@@ -28,16 +29,16 @@ body {
 }
 .inventory-layout {
   display: flex;
-  flex-direction: row; /* Place sections side by side */
+  flex-direction: row;
   gap: 1rem;
-  
-  align-items: flex-start; /* Align sections at the top */
+  align-items: flex-start;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 /* Product List Section */
 .product-list-container {
-  flex: 0 0 25%; /* Fixed width of 25% */
-  max-width: 10%; /* Prevent exceeding 25% */
+  flex: 0 0 25%;
+  max-width: 25%; /* Match 25% width for larger screens */
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
@@ -45,6 +46,7 @@ body {
   padding: 1rem;
   border-radius: 8px;
   margin-top: 1rem;
+  box-sizing: border-box; /* Ensure padding is included in width calculations */
 }
 .product-heading {
   font-size: 1.5rem;
@@ -62,12 +64,9 @@ body {
 
 /* Table Section */
 .table-section {
-  flex: 1; /* Take the remaining space */
-  /* max-width: 90%; Prevent exceeding 75% */
-  /* padding: 1rem; */
+  flex: 1;
   background-color: #ffffff;
   border-radius: 8px;
-
   overflow-x: auto;
 }
 .inventory-table {
@@ -75,36 +74,28 @@ body {
   border-collapse: collapse;
 }
 .inventory-table th {
-  background-color: #5bc3c8;
+  background-color: #000000;
   color: white;
   padding: 1rem;
-  
 }
-.inventory-table .plants{
+.inventory-table .plants {
   display: flex;
 }
-
-.plants .units{
+.plants .units {
   flex: 1;
-  border: 1px solid #ddd;
+  border: 1px solid #211f1f;
   min-width: 100px;
   cursor: pointer;
 }
-
-
 .units.selected {
   background-color: #007bff;
   color: white;
   font-weight: bold;
 }
-
-
-.inventory-table th span{
-  /* background-color: green; */
+.inventory-table th span {
   border: 1px solid #ddd;
   padding: 5px;
   flex: 1;
-  
 }
 .inventory-table td {
   text-align: center;
@@ -115,20 +106,17 @@ body {
   font-size: 0.8rem;
   color: #555;
 }
-.inventory-table thead tr th:first-child{
+.inventory-table thead tr th:first-child {
   position: sticky;
   left: 0;
   z-index: 1;
-  
 }
-
-.inventory-table tbody tr td:first-child{
+.inventory-table tbody tr td:first-child {
   position: sticky;
   left: 0;
   z-index: 1;
-background-color: white;
-/* border: 1px solid #000; */
-  outline: 1px solid black;;
+  background-color: white;
+  outline: 1px solid black;
 }
 
 /* Action Button */
@@ -136,8 +124,8 @@ background-color: white;
   text-align: center;
   display: flex;
   gap: 2rem;
+  flex-wrap: wrap; /* Ensure buttons wrap on smaller screens */
 }
-
 .query-button {
   padding: 0.75rem 1.5rem;
   background-color: #662D91;
@@ -150,11 +138,9 @@ background-color: white;
   cursor: pointer;
   box-shadow: 2px 2px 6px 2px rgb(208, 192, 251);
 }
-
 .query-button:hover {
-  background-color: #E1594F;
-  box-shadow: 0 0 6px 2px rgb(195, 254, 175);
-  color:black;
+  background-color: #3d1b57;
+  box-shadow: 0 0 4px 1px rgb(195, 254, 175);
 }
 
 /* Document Section */
@@ -166,38 +152,48 @@ background-color: white;
 }
 .document-section h2 {
   margin-bottom: 1rem;
-  color: #4c4c4c;
+  background: linear-gradient(to right, #662D91 0.05%, #AC466C 79.07%, #E1594F 99.96%);
   padding: 1rem;
-  background-color: #d5f2f7;
+  color: #ffffff;
 }
 .document-cards {
   display: flex;
   justify-content: space-around;
   gap: 1rem;
   padding: 6rem;
+  flex-wrap: wrap; /* Ensure cards wrap on smaller screens */
 }
 .doc-card {
   flex: 1;
-  background-color: rgb(255, 255, 255);;
+  background-color: #ffffff;
   padding: 8rem;
   border-radius: 6px;
   text-align: center;
   box-shadow: 2px 2px 6px 2px rgb(236, 229, 254);
 }
-
-
-
-
-
+.doc-card:hover {
+  background-color: #d0d7db;
+}
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .inventory-layout {
-    flex-direction: column; /* Stack sections vertically */
+    flex-direction: column;
   }
   .product-list-container,
   .table-section {
-    flex: 1 1 100%; /* Full width for smaller screens */
-    max-width: 100%; /* Prevent overflow */
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  .document-cards {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .doc-card {
+    padding: 2rem;
+  }
+  .query-button {
+    padding: 0.6rem 1rem;
+    font-size: 14px;
   }
 }
