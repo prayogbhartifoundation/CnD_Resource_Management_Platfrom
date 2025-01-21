@@ -16,7 +16,7 @@ body {
 .inventory-header h1 {
   margin: 0;
   font-size: 2rem;
-  color: #ffffff;
+  /* color: #ffffff; */
 }
 
 /* Main Content Layout */
@@ -75,7 +75,7 @@ body {
   border-collapse: collapse;
 }
 .inventory-table th {
-  background-color: #5bc3c8;
+  background-color: #662D91;
   color: white;
   padding: 1rem;
   
@@ -152,9 +152,9 @@ background-color: white;
 }
 
 .query-button:hover {
-  background-color: #E1594F;
+  background-color: #3d1b57;
   box-shadow: 0 0 6px 2px rgb(195, 254, 175);
-  color:black;
+  color:rgb(255, 255, 255);
 }
 
 /* Document Section */
@@ -166,9 +166,9 @@ background-color: white;
 }
 .document-section h2 {
   margin-bottom: 1rem;
-  color: #4c4c4c;
+  color: #ffffff;
   padding: 1rem;
-  background-color: #d5f2f7;
+  background-color: #4c4c4c;
 }
 .document-cards {
   display: flex;

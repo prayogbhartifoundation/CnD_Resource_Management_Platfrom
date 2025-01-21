@@ -9,7 +9,7 @@
 .contact-header {
   text-align: center;
   margin-bottom: 2rem;
-  background-color: #f0f8ff;
+  background-color: #cdb4e2;
   padding: 1rem;
   border-radius: 8px;
   color: black;
@@ -29,7 +29,7 @@
 }
 
 .info-card {
-  background-color: #e8f7fc;
+  background-color: #cdb4e2;
   padding: 1rem;
   border-radius: 8px;
   text-align: center;
@@ -79,9 +79,9 @@
 }
 
 .submit-button:hover {
-  background-color: #E1594F;
+  background-color: #3d1b57;
   box-shadow: 0 0 6px 2px rgb(195, 254, 175);
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 /* Footer */

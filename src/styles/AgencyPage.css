@@ -10,7 +10,7 @@
 
 /* Header Section */
 .header-section {
-  background-color: #4c4c4c;
+  background-color: #662D91;
   color: white;
   text-align: center;
   padding: 1rem;
@@ -25,7 +25,7 @@
     "incharge branding";
   grid-template-columns: 1fr 2fr;
   gap: 1rem;
-  background-color: #54c0ca;
+  background-color: #cdb4e2;
   padding: 16px;
   border-radius: 8px;
   margin: 16px 0;
@@ -40,12 +40,7 @@
   color: black;
 }
 
-.branding-details {
-  background-color: #e7ebed ;
-  padding: 10rem;
-  border-radius: 8px;
-  
-}
+
 
 .logo-card {
   grid-area: logo;
@@ -72,7 +67,7 @@
 
 /* Waste Processing Section */
 .waste-processing-details {
-  background-color: #bce0e6;
+  background-color:#cdb4e2;
   padding: 16px;
   border-radius: 8px;
   margin: 24px 0;
@@ -83,7 +78,7 @@
   font-size: 1.5rem;
   color: white;
   margin-bottom: 1.5rem;
-  background-color: #54c0ca;
+  background-color: #662D91;
   padding: 12px;
   border-radius: 6px;
 }
@@ -135,7 +130,7 @@
 
 .compliance-section h3 {
   color: white;
-  background-color: #54c0ca;
+  background-color: #662D91;
   padding: 1rem;
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
