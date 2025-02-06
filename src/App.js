@@ -34,9 +34,9 @@ function App() {
             <li><Link to="/product">Products</Link></li>
             <li><Link to="/agencies">Agencies</Link></li>
             <li><Link to="/contact">Contact Us</Link></li>
-            {/* <li><Link to="/agency-home">Agent Page</Link></li>
-            <li><Link to="/plant-home">Plant Page</Link></li> */}
-            <li><Link to="/Login">Login</Link></li>
+            <li><Link to="/agency-home">Agent Page</Link></li>
+            <li><Link to="/plant-home">Plant Page</Link></li>
+            {/* <li><Link to="/Login">Login</Link></li> */}
           </ul>
         </nav>
 

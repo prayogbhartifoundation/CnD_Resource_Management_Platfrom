@@ -15,7 +15,14 @@ import { Schema, model } from "mongoose";
         plantId: { type: String },
         },
     ],
-    mohuaStatus: { type: String },
+    mohuaStatus: [{
+        dep : { type: String },
+        target : [{
+            name : { type: String },
+            value : { type: String },   
+            status : { type: String },
+        }],
+    }],
     },{timestamps:true});
 
 // Create the model

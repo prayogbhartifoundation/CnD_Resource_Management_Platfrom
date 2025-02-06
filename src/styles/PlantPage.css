@@ -1,0 +1,30 @@
+
+.action-btns {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .status-button {
+    padding: 0.75rem 1.5rem;
+    background-color: #621de1;
+     box-shadow: 2px 2px 6px 2px rgb(208, 192, 251);
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .status-button:hover{
+    background-color: rgb(19, 173, 19);
+    box-shadow: 0 0 6px 2px rgb(195, 254, 175);
+  }
+  
+  .clicked{
+    background-color: rgb(19, 173, 19);
+    box-shadow: 0 0 2px 1px rgb(195, 254, 175);
+  }
