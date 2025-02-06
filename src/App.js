@@ -5,6 +5,7 @@ import InventoryStatusPage from "./pages/InventoryStatusPage";
 import AgencyPage from "./pages/AgencyPage";
 import ProductPage from "./pages/ProductPage";
 import ContactUsPage from "./pages/ContactUsPage";
+import LoginNewPage from "./pages/LoginNewPage";
 import './App.css';
 import Sidebar from "./components/Sidebar";
 import OfftakeStatusPage from "./pages/OfftakeStatusPage";
@@ -28,13 +29,14 @@ function App() {
         <div className="branding"></div>
         <nav>
           <ul>
-            <li><Link to="/">Home</Link></li>
+            <li><Link to="/">Home<b></b></Link></li>
             <li><Link to="/inventory">Inventory Status</Link></li>
             <li><Link to="/product">Products</Link></li>
             <li><Link to="/agencies">Agencies</Link></li>
             <li><Link to="/contact">Contact Us</Link></li>
             <li><Link to="/agency-home">Agent Page</Link></li>
             <li><Link to="/plant-home">Plant Page</Link></li>
+            {/* <li><Link to="/Login">Login</Link></li> */}
           </ul>
         </nav>
 
@@ -60,6 +62,7 @@ function App() {
           <Route path="/plant-login" element={<PlantLogin />} />
           <Route path="/reset-password-plant" element={<PlantResetPassword />} />
           <Route path="/plant-home" element={<PlantHome />} />
+          <Route path="/Login" element={<LoginNewPage />} />
         </Routes>
       </main>
 

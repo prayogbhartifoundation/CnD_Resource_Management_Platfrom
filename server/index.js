@@ -661,7 +661,7 @@ app.put("/api/reset_password_plant", async (req, res) => {
         }
 
         // Update the password and increment passwordReset
-        const updatedEntry = await agency_model.findOneAndUpdate(
+        const updatedEntry = await plant_model.findOneAndUpdate(
           { plantId },
           {
             $set: {

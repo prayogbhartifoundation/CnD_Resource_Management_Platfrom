@@ -1,35 +1,32 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
+import '../../../styles/FormStyle.css'
 
-const UpdateOfftake = () => {
-    const defaultForm = {
-        location: "",
-        contact: "",
-        contactEmail: "",
-      };
-    
-      const [formData, setFormData] = useState(defaultForm);
-    
-      const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-          ...formData,
-          [name]: value,
-        });
-      };
+const UpdateInvetory = () => {
+  const defaultForm = {
+    location: "",
+    contact: "",
+    contactEmail: "",
+  };
+
+  const [formData, setFormData] = useState(defaultForm);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
   return (
-    <div>
-        <label htmlFor="location">Update Offtake</label>
+    <div className="updateInventory">
+        <label htmlFor="location">Update Inventory</label>
         <br />
         <br />
-        <div className="form-cont">
+      <div className="form-cont">
         <form
           action=""
           // onSubmit={handleSubmit}
         >
-<<<<<<< HEAD
-        
-=======
->>>>>>> 33421e5ed3de1416c59274f616bd8d5a5f24898a
           <table>
             <thead>
               <th>Sno.</th>
@@ -96,8 +93,10 @@ const UpdateOfftake = () => {
               </tr>
             </tbody>
           </table>
+
           <br />
           <br />
+
           <button
             style={{
               padding: "10px 20px",
@@ -114,9 +113,12 @@ const UpdateOfftake = () => {
 
         {/* {error && <>{error}</>} */}
       </div>
-      <hr />
-    </div>
-  )
-}
 
-export default UpdateOfftake
+      <hr />
+
+      
+    </div>
+  );
+};
+
+export default UpdateInvetory;

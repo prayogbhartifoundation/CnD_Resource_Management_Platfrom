@@ -12,7 +12,24 @@ import { Schema, model } from "mongoose";
     logins:{type: Number, default:0},
     passwordReset:{type: Number, default:0},
     
-    mohuaStatus: { type: String },
+    mohuaStatus: [{
+        dep : { type: String },
+        total : {type: String},
+        annual : {type: String},
+        last15days : {type: String},
+        entry : [{
+            value : {type : String, },
+            entryDate : {type: Date, }
+        }],
+    }],
+
+    products: [{
+        name:{type : String,},
+        qnt:[{
+            value : {type : String, },
+            entryDate : {type : Date, },
+        }],
+    }]
     },{timestamps:true});
 
 // Create the model

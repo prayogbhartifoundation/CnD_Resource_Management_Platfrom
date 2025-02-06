@@ -8,11 +8,10 @@ body {
 .app-header {
   position: sticky;
   top: 0;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #4c4c4c;
+  background: linear-gradient(to right, #662D91 0.05%, #AC466C 79.07%, #E1594F 99.96%);
   padding: 1rem;
   z-index: 999;
 }
@@ -34,15 +33,25 @@ nav ul {
 
 nav ul li a {
   text-decoration: none;
-  padding: 0.5rem 1rem;
-  background-color: #343a40;
+  padding: 10px;
+  /* background-color: #662D91; */
+  text-transform:uppercase;
   color: white;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+  font-weight: 500;
+  font-size: medium;
+  position: relative;
+  /* border-radius: 5px; */
+  /* transition: background-color 0.3s; */
 }
 
-nav ul li a:hover {
-  background-color: #28a745;
+
+
+nav ul li a:hover,
+nav ul li a:focus{
+  background-color: #ffffff;
+  padding:10px;
+  border-radius: 5px;
+  color:rgb(0, 0, 0);
 }
 
 .app-header .hamburger{
@@ -56,8 +65,8 @@ main{
 
 /* Footer */
 .app-footer {
-  background-color: #4c4c4c;
-  color: white;
+  background: linear-gradient(to right, #662D91 0.05%, #AC466C 79.07%, #E1594F 99.96%);
+  color: rgb(0, 0, 0);
   text-align: center;
   padding: 1.5rem 0;
 }

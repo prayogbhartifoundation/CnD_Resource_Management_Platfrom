@@ -10,7 +10,7 @@
 
 /* Header Section */
 .header-section {
-  background-color: #4c4c4c;
+  background: linear-gradient(to right, #662D91 0.05%, #AC466C 79.07%, #E1594F 99.96%);background-color: #4c4c4c;
   color: white;
   text-align: center;
   padding: 1rem;
@@ -40,32 +40,38 @@
   color: black;
 }
 
-.branding-details {
-  background-color: #e7ebed ;
-  padding: 10rem;
-  border-radius: 8px;
-  
-}
+
 
 .logo-card {
   grid-area: logo;
-  padding: 7rem;
 }
 
-.branding-highlights {
+.branding-details {
   grid-area: branding;
+  background-color: #e7ebed;
+  padding: 10rem;
+  text-align: center;
+  border-radius: 8px;
+  color: black;
 }
 
 .incharge-card {
   grid-area: incharge;
+  background-color: #e7ebed;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: bold;
+  color: black;
 }
 
 /* Waste Processing Section */
 .waste-processing-details {
-  background-color: #bce0e6;
+  
   padding: 16px;
   border-radius: 8px;
   margin: 24px 0;
+  background-color: #54c0ca;
 }
 
 .section-title {
@@ -73,9 +79,10 @@
   font-size: 1.5rem;
   color: white;
   margin-bottom: 1.5rem;
-  background-color: #54c0ca;
-  padding: 12px;
-  border-radius: 6px;
+  background: linear-gradient(to right, #662D91 0.05%, #AC466C 79.07%, #E1594F 99.96%);
+  padding: 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .waste-details-layout {
@@ -99,7 +106,6 @@
 
 .waste-capacity-card {
   grid-area: capacity;
-  padding: 0rem;
 }
 
 .material-quantities-card {
@@ -115,43 +121,6 @@
   padding: 10rem;
 }
 
-/* Responsive Adjustments */
-
-/* Tablet View (768px and below) */
-@media (max-width: 768px) {
-  .branding-section, .waste-details-layout {
-    grid-template-areas:
-      "logo"
-      "branding"
-      "incharge";
-    grid-template-columns: 1fr;
-  }
-
-  .waste-details-layout {
-    grid-template-areas:
-      "capacity"
-      "material"
-      "contact"
-      "operation";
-  }
-}
-
-/* Mobile View (480px and below) */
-@media (max-width: 480px) {
-  .branding-card, .detail-card {
-    padding: 1.5rem;
-    font-size: 0.9rem;
-  }
-
-  .branding-section, .waste-details-layout {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Utility for Box Sizing */
-* {
-  box-sizing: border-box;
-}
 /* Compliance Section */
 .compliance-section {
   background-color: #ffffff;
@@ -163,7 +132,7 @@
 
 .compliance-section h3 {
   color: white;
-  background-color: #54c0ca;
+  background: linear-gradient(to right, #662D91 0.05%, #AC466C 79.07%, #E1594F 99.96%);
   padding: 1rem;
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
@@ -173,12 +142,12 @@
   display: flex;
   justify-content: center;
   gap: 16px;
-  flex-wrap: wrap; /* Ensures responsiveness for smaller screens */
+  flex-wrap: wrap;
 }
 
 .doc-button {
-  background-color: #e7ebed;
-  padding: 140px;
+  background-color: #ffffff;
+  padding: 100px;
   margin: 30px;
   border: none;
   border-radius: 8px;
@@ -186,9 +155,9 @@
   font-weight: bold;
   color: black;
   text-align: center;
-  min-width: 150px; /* Ensures consistent button size */
+  min-width: 150px;
   cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 4px 2px rgb(222, 210, 255);
 }
 
 .doc-button:hover {
@@ -196,20 +165,71 @@
 }
 
 /* Responsive Adjustments */
+
+/* Large Screens (1024px and above) */
+@media (min-width: 1024px) {
+  .branding-section {
+    grid-template-columns: 1fr 3fr;
+    gap: 2rem;
+  }
+
+  .waste-details-layout {
+    grid-template-columns: 1fr 3fr;
+    gap: 2rem;
+  }
+
+  .detail-card {
+    font-size: 1.2rem;
+  }
+}
+
+/* Tablet View (768px and below) */
 @media (max-width: 768px) {
+  .branding-section, .waste-details-layout {
+    grid-template-areas:
+      "logo"
+      "branding"
+      "incharge";
+    grid-template-columns: 1fr;
+  }
+
+  .branding-details, .detail-card {
+    padding: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+  }
+
   .doc-buttons {
-    gap: 12px; /* Slightly smaller gap on tablet view */
+    flex-direction: column;
+    gap: 8px;
   }
 
   .doc-button {
-    min-width: 120px; /* Smaller minimum width on tablet view */
+    padding: 20px;
+    font-size: 0.9rem;
   }
 }
 
+/* Mobile View (480px and below) */
 @media (max-width: 480px) {
+  .agency-page {
+    padding: 0.25rem;
+  }
+
+  .branding-card, .detail-card {
+    padding: 1rem;
+    font-size: 0.8rem;
+  }
+
+  .doc-buttons {
+    gap: 4px;
+  }
+
   .doc-button {
-    font-size: 0.9rem; /* Smaller font size on mobile */
-    padding: 15px; /* Adjust padding for better fit */
+    padding: 10px;
+    font-size: 0.8rem;
+    min-width: 100px;
   }
 }
-

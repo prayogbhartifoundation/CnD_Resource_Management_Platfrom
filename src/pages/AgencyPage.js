@@ -6,7 +6,7 @@ function AgencyPage() {
     <div className="agency-page">
       {/* Header Section */}
   <div className="header-section">
-    Agency Name and Location
+    <b>Agency Name and Location</b>
   </div>
      
       {/* Branding Section */}
@@ -23,8 +23,9 @@ function AgencyPage() {
       </section>
 
       {/* Waste Processing Section */}
+      <h3 className="section-title">Waste Processing Details</h3>
       <section className="waste-processing-details">
-  <h3 className="section-title">Waste Processing Details</h3>
+  
   <div className="waste-details-layout">
     <div className="detail-card waste-capacity-card">
       <p>Installed Waste Capacity</p>

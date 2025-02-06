@@ -8,7 +8,7 @@
 }
 
 header {
-  background-color: #343a40;
+  background: linear-gradient(to right, #662D91 0.05%, #AC466C 79.07%, #E1594F 99.96%);
   color: #fff;
   text-align: center;
   padding: 1rem;
@@ -63,6 +63,7 @@ h3 {
 
 /* Middle Buttons Section */
 .middle-buttons {
+  
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -70,20 +71,25 @@ h3 {
   margin-bottom: 2rem;
 }
 
+
 .middle-buttons button {
+  box-shadow: 2px 2px 6px 2px rgb(208, 192, 251);
   flex: 1 1 calc(33.333% - 1rem);
   max-width: 200px;
-  padding: 0.75rem 1rem;
-  background-color: #e9ecef;
-  color: #212529;
-  border: 1px solid #ced4da;
+  padding: 1rem 1rem;
+  background-color: #662D91;
+  
+  border: 1px solid rgb(222, 210, 255) ;
   border-radius: 4px;
   cursor: pointer;
   text-align: center;
+  font-weight: bold;
+  color: #ffffff;
 }
 
 .middle-buttons button:hover {
-  background-color: #d1d5d9;
+  background-color: #3d1b57;
+  box-shadow: 0 0 4px 1px 3d1b57(195, 254, 175);
 }
 
 /* Material Reports Section */
@@ -97,7 +103,9 @@ h3 {
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
+  
 }
+
 
 .card {
   flex: 1 1 calc(33.333% - 1rem);
@@ -108,6 +116,11 @@ h3 {
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
+  box-shadow: 2px 2px 4px 2px rgb(222, 210, 255)
+  
+}
+.card:hover {
+  background-color: #d0d7db;
 }
 
 
