@@ -10,8 +10,8 @@
 
 /* Header Section */
 .header-section {
-  background: linear-gradient(to right, #662D91 0.05%, #AC466C 79.07%, #E1594F 99.96%);background-color: #4c4c4c;
-  color: white;
+  /* background: linear-gradient(to right, #662D91 0.05%, #AC466C 79.07%, #E1594F 99.96%);background-color: #4c4c4c; */
+  color: rgb(4, 4, 4);
   text-align: center;
   padding: 1rem;
   font-size: 1.5rem;
@@ -77,9 +77,9 @@
 .section-title {
   text-align: center;
   font-size: 1.5rem;
-  color: white;
+  color: rgb(8, 8, 8);
   margin-bottom: 1.5rem;
-  background: linear-gradient(to right, #662D91 0.05%, #AC466C 79.07%, #E1594F 99.96%);
+  /* background: linear-gradient(to right, #662D91 0.05%, #AC466C 79.07%, #E1594F 99.96%); */
   padding: 1rem;
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
@@ -131,8 +131,8 @@
 }
 
 .compliance-section h3 {
-  color: white;
-  background: linear-gradient(to right, #662D91 0.05%, #AC466C 79.07%, #E1594F 99.96%);
+  color: rgb(0, 0, 0);
+  /* background: linear-gradient(to right, #662D91 0.05%, #AC466C 79.07%, #E1594F 99.96%); */
   padding: 1rem;
   font-size: 1.5rem;
   margin-bottom: 1.5rem;

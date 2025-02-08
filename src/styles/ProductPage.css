@@ -8,8 +8,8 @@
 }
 
 header {
-  background: linear-gradient(to right, #662D91 0.05%, #AC466C 79.07%, #E1594F 99.96%);
-  color: #fff;
+  /* background: linear-gradient(to right, #662D91 0.05%, #AC466C 79.07%, #E1594F 99.96%); */
+  color: #000000;
   text-align: center;
   padding: 1rem;
 }
