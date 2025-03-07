@@ -17,11 +17,25 @@ body {
 }
 
 .branding {
-  width: 50px;
+  width: fit-content;
   height: 50px;
-  border-radius: 50%;
-  background-color: #a4d6a3;
+  border-radius: 10px;
+  display: flex;
+  /* align-items: center; */
+
+  gap: 20px;
+  padding: 3px 10px;
+  background-color: #f3fcf2;
 } 
+
+.branding h4{
+  position: relative;
+  top: -5px;
+}
+
+.branding img{
+  width: 120px;
+}
 
 nav ul {
   list-style: none;
@@ -69,6 +83,10 @@ main{
   color: rgb(0, 0, 0);
   text-align: center;
   padding: 1.5rem 0;
+}
+
+.app-footer{
+  font-weight: bold;
 }
 
 /* Responsive Styles */

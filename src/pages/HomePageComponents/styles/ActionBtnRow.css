@@ -1,0 +1,78 @@
+.ActionBtnRowWrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    background-color: #7f3685;
+    padding: 5px 0;
+    border-radius: 10px;
+}
+
+.ActionBtnRow {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    width: calc(100% - 80px);
+    /* border: 1px solid #000; */
+    padding: 10px 0;
+}
+
+.ActionBtnRow::-webkit-scrollbar {
+    display: none;
+}
+
+.ActionBtnRow__btn {
+    background-color: #f7f7f7;
+    border: none;
+    min-width: 100px;
+    margin: 0 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #4a47a3;
+    font-weight: 600;
+    transition: all 0.3s;
+    text-align: center;
+    flex-shrink: 0;
+
+    box-shadow: 1px 1px 2px 2px #a24471  ;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+}
+
+.ActionBtnRow__btn .logo{
+    font-size: 24px;
+    text-align: center;
+
+    position: relative;
+    top: -2px;
+}
+
+
+.ActionBtnRow__arrow {
+    background: #a24471;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 7px;
+    width: 40px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    font-size: 18px;
+    transition: background 0.3s;
+}
+
+.ActionBtnRow__arrow:hover {
+    background: #3a3697;
+}

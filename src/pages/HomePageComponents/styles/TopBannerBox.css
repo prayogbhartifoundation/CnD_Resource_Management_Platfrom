@@ -1,0 +1,141 @@
+.parent {
+    display: grid;
+    width: 100%;
+    max-width: 850px; 
+    margin: auto;
+    padding: 10px;
+
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 8px;
+}
+   
+
+.parent > div{
+    /* min-width: 10px; */
+    min-height: 55px;
+    border: 1px solid #959090;
+    border-radius: 8px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px ;
+    cursor: pointer;
+}
+
+.titleBox{
+    width: 95%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 4px 7px;
+    margin: 7px 3px;
+    border-radius:5px;
+
+    box-shadow: 2px 2px 6px 2px #eba0a0;
+}
+
+.parent > div:not(.div0) {
+    background: #c5e0f1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.parent > div:not(.div0) span:first-child {
+    font-size: 16px;
+}
+
+.parent > div:not(.div0) i {
+    text-wrap-mode: nowrap;
+
+    font-size: 10px;
+    /* speed */
+    /* text-align: center; */
+
+}
+
+.parent > div:not(.div0) span:nth-child(2) {
+    font-size: 12px;
+    text-align: left;
+    width: 100%;
+    /* margin-top: 5px; */
+}
+
+.parent > div:not(.div0) span:last-child {
+    font-size: 10px;
+    margin-top: 5px;
+    width: 100%;
+    text-align: left;
+}
+
+
+
+ 
+.div1 {
+    grid-column: span 3 / span 3;
+    grid-row: span 4 / span 4;
+    grid-column-start: 3;
+    grid-row-start: 3;
+}
+
+.div2 {
+    grid-row: span 2 / span 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+}
+
+.div3 {
+
+    grid-row: span 2 / span 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+}
+
+.div4 {
+    
+    grid-row: span 2 / span 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 5;
+}
+
+.div5 {
+    
+    grid-row: span 2 / span 2;
+    grid-column-start: 3;
+    grid-column-end: 6;
+    grid-row-start: 1;
+}
+
+.div6 {
+    
+    grid-row: span 2 / span 2;
+    grid-column-start: 6;
+    grid-column-end: 8;
+    grid-row-start: 1;
+}
+
+.div7 {
+    
+    grid-row: span 2 / span 2;
+    grid-column-start: 6;
+    grid-column-end: 8;
+    grid-row-start: 3;   
+}
+
+.div8 {
+    grid-row: span 2 / span 2;
+    grid-column-start: 6;
+    grid-column-end: 8;
+    grid-row-start: 5;
+}
+        

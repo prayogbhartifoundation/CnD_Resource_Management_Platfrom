@@ -22,7 +22,7 @@ const AuthorisedAgencyHome = ({name}) => {
         console.log(res);
 
         if (res.data.Status === "Success") {
-          setPlantData(res.data.data);
+          setPlantData(res.data.data.filter((p) => p.agencyId === name));
           // navigate('/login')
         } else {
           console.log(res.data.msg);

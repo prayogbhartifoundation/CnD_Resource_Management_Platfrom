@@ -29,7 +29,9 @@
 .form-cont form table thead th:nth-child(2),
 .form-cont form table tbody td:nth-child(2){
     min-width: 50%;
-    max-width: 50%;
+    /* max-width: 50%; */
+    padding: 10px 20px;
+    text-wrap: wrap;
     font-weight: 600;
 }
 
@@ -50,12 +52,35 @@
     
 }
 
-.form-cont form table input{
+.form-cont form table input,
+.form-cont form table textarea{
     border: 1px solid #aba9a9;
     margin: 10px 0;
-}
-.form-cont form table input:focus{
-    outline: none;
     border-radius: 5px;
+}
+.form-cont form table input:focus,
+.form-cont form table textarea:focus{
+    outline: none;
+    border-radius: 8px;
     border: 1px solid #aba9a9;
+}
+.addNewProduct form table,
+.addNewProduct form table thead tr th, 
+.addNewProduct form table tbody tr td{
+    border: none;
+    border-bottom: 1px solid #9b9b9b;
+}
+
+.addNewProduct form table thead tr th:last-child, 
+.addNewProduct form table tbody tr td:last-child{
+    border-left: 1px solid #9b9b9b;
+}
+.addNewProduct form table input,
+.addNewProduct form table textarea{
+    width: 95%;
+}
+
+
+.addNewProduct form table label{
+    font-weight: bold;
 }

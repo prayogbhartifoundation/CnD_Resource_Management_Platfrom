@@ -43,7 +43,7 @@ function LoginNewPage() {
                 onChange={handleUserTypeChange}
                 required
               />{" "}
-              Agent Page
+              Agency Page
             </label>
           </div>
 

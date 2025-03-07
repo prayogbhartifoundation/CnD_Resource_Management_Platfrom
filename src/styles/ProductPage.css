@@ -8,10 +8,27 @@
 }
 
 header {
+  display: flex;
+  justify-content: space-between;
   background: linear-gradient(to right, #662D91 0.05%, #AC466C 79.07%, #E1594F 99.96%);
   color: #fff;
   text-align: center;
   padding: 1rem;
+}
+
+header .inp-box{
+  width: 350px;
+  display: flex;
+  background: #fff;
+  padding: 0.5rem;
+  border-radius: 5px;
+  gap: 0.5rem;
+}
+
+header .inp-box input{
+  border: none;
+  outline: none;
+  width: 100%;
 }
 
 h2 {
@@ -60,6 +77,56 @@ h3 {
   padding: 0.5rem;
   border-radius: 4px;
 }
+
+
+.product-card-agency-box .row{
+  width: 100%;
+  display: flex;
+}
+
+.product-card-agency-box .row span{
+  font-weight: normal;
+  margin-left: 0.5rem;
+  background-color: #fff;
+  padding: 4px;
+  border-radius: 5px;
+}
+
+.product-card-agency-box .row span i {
+  margin:0 0.5rem;
+  font-size: smaller;
+}
+
+.product-card-agency-box .row span:first-child{
+  font-weight: bold;
+  margin-right: 0.5rem;
+  background-color: #00a2a3;
+  color: white;
+}
+
+
+
+.offtake-table{
+  border-collapse: collapse;
+  border: 1px solid #000;
+}
+
+.offtake-table th{
+  font-size: 12px;
+  padding: 5px;
+}
+.offtake-table td{
+  font-size: 12px;
+}
+
+.offtake-table td,
+.offtake-table th{
+  border: 1px solid #000;
+}
+
+
+
+
 
 /* Middle Buttons Section */
 .middle-buttons {

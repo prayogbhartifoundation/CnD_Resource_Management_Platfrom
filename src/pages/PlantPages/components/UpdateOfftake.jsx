@@ -1,122 +1,166 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from "react";
+import departments from "../../../data/departments";
+import "../../../styles/FormStyle.css";
+import axios from "axios";
 
-const UpdateOfftake = () => {
-    const defaultForm = {
-        location: "",
-        contact: "",
-        contactEmail: "",
-      };
-    
-      const [formData, setFormData] = useState(defaultForm);
-    
-      const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-          ...formData,
-          [name]: value,
-        });
-      };
+const UpdateOfftake = ({ plantId }) => {
+  const defaultForm = {
+    plantId,
+    depDetails: [
+      {
+        dep: "",
+        newEntry: "",
+        entryDate: "",
+      },
+    ],
+  };
+
+  const [formData, setFormData] = useState(defaultForm);
+  const [plant, setPlant] = useState({});
+
+  const [submited, setSubmitted] = useState(false);
+
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData({
+  //     ...formData,
+  //     [name]: value,
+  //   });
+  // };
+
+  useEffect(() => {
+    if (!plantId) return; // Prevent API call if plantId is empty
+
+    axios
+      .post("http://localhost:8081/api/getPlant", { plantId }) // Correct body format
+      .then((res) => {
+        console.log(res);
+        if (res.data.Status === "Success") {
+          setPlant(res.data.data);
+        } else {
+          console.error("Unexpected API response:", res);
+          alert("Something went wrong, check logs!");
+        }
+      })
+      .catch((err) => console.error("API Error:", err));
+  }, [submited, plantId]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        "http://localhost:8081/api/update_mohua_status",
+        formData
+      );
+      if (response.data.Status === "Success") {
+        alert("OFFtake Updated Successfully !!");
+        setFormData(defaultForm);
+        setSubmitted(!submited);
+        // setSubmitted(!submited);
+      } else {
+        alert(`something wrong !! \n ${response.data.error}`);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div>
-        <label htmlFor="location">Update Offtake</label>
-        <br />
-        <br />
-        <div className="form-cont">
+      <button
+        style={{
+          padding: "10px 20px",
+          border: "none",
+          borderRadius: "5px",
+          background: "#007bff",
+          color: "#fff",
+          cursor: "pointer",
+        }}
+        onClick={handleSubmit}
+      >
+        Register
+      </button>
+      <br />
+      <br />
+      <div className="form-cont">
         <form
           action=""
           // onSubmit={handleSubmit}
         >
-<<<<<<< HEAD
-        
-=======
->>>>>>> 33421e5ed3de1416c59274f616bd8d5a5f24898a
           <table>
             <thead>
               <th>Sno.</th>
-              <th>Product Name</th>
-              <th>Quantity to add</th>
-              <th>Total Quantity</th>
+              <th>Department</th>
+              <th>(01.04.24 to 31.03.25)</th>
+              
+              <th>Today's data</th>
             </thead>
 
             <tbody>
-              <tr>
-                <td>1.</td>
-                <td>
-                  <label htmlFor="location">Plant Location:</label>
-                </td>
+              {departments.map((d, index) => {
+                const plantDepIndex = plant.mohuaStatus ? plant.mohuaStatus.findIndex((m) => m.dep === d) : -1;
+                // Ensure formData.prodDetails[index] exists
+                if (!formData.depDetails[index]) {
+                  setFormData((prevData) => {
+                    const updatedDepDetails = [...prevData.depDetails];
+                    updatedDepDetails[index] = {
+                      newEntry: "",
+                      entryDate: "",
+                    };
+                    return { ...prevData, depDetails: updatedDepDetails };
+                  });
+                }
+                return (
+                  <tr key={index}>
+                    <td>{index + 1}</td>
+                    <td>
+                      <label htmlFor="location">{d}</label>
+                    </td>
+                    <td>
+                      <label htmlFor="location">{plantDepIndex>-1 ? plant.mohuaStatus[plantDepIndex].annual : 0}</label>
+                    </td>
+                   
+                    <td>
+                      <input
+                        type="text"
+                        id="newEntry"
+                        name="newEntry"
+                        value={formData.depDetails[index]?.newEntry}
+                        // onChange={handleChange}
 
-                <td>
-                  <input
-                    type="text"
-                    id="location"
-                    name="location"
-                    value={formData.location}
-                    onChange={handleChange}
-                    required
-                  />
-                </td>
-                <td>
-                  <input
-                    type="text"
-                    id="location"
-                    name="location"
-                    value={formData.location}
-                    onChange={handleChange}
-                    required
-                  />
-                </td>
-              </tr>
-              
-              <tr>
-                <td>1.</td>
-                <td>
-                  <label htmlFor="location">Plant Location:</label>
-                </td>
-
-                <td>
-                  <input
-                    type="text"
-                    id="location"
-                    name="location"
-                    value={formData.location}
-                    onChange={handleChange}
-                    required
-                  />
-                </td>
-                <td>
-                  <input
-                    type="text"
-                    id="location"
-                    name="location"
-                    value={formData.location}
-                    onChange={handleChange}
-                    required
-                  />
-                </td>
-              </tr>
+                        onChange={(e) => {
+                          const { value } = e.target;
+                          setFormData((prevData) => {
+                            const updatedDepDetails = [...prevData.depDetails];
+                            updatedDepDetails[index] = {
+                              ...updatedDepDetails[index],
+                              dep: d,
+                              newEntry: value,
+                              entryDate: new Date().toISOString(),
+                            };
+                            return {
+                              ...prevData,
+                              depDetails: updatedDepDetails,
+                            };
+                          });
+                        }}
+                        required
+                      />
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
           <br />
           <br />
-          <button
-            style={{
-              padding: "10px 20px",
-              border: "none",
-              borderRadius: "5px",
-              background: "#007bff",
-              color: "#fff",
-              cursor: "pointer",
-            }}
-          >
-            Register
-          </button>
         </form>
 
         {/* {error && <>{error}</>} */}
       </div>
       <hr />
     </div>
-  )
-}
+  );
+};
 
-export default UpdateOfftake
+export default UpdateOfftake;

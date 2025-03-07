@@ -14,7 +14,7 @@ import { Schema, model } from "mongoose";
     
     mohuaStatus: [{
         dep : { type: String },
-        total : {type: String},
+        total : {type: String}, 
         annual : {type: String},
         last15days : {type: String},
         entry : [{
@@ -24,11 +24,9 @@ import { Schema, model } from "mongoose";
     }],
 
     products: [{
+        prodId:{type : String,},
         name:{type : String,},
-        qnt:[{
-            value : {type : String, },
-            entryDate : {type : Date, },
-        }],
+        qnt:{type : String, },
     }]
     },{timestamps:true});
 

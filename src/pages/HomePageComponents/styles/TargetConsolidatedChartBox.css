@@ -1,0 +1,76 @@
+.TargetConsolidatedChartBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.TargetConsolidatedChartBox .titleBox{
+  padding: 10px;
+  font-weight: 600;
+}
+
+.TargetConsolidatedChartBox .main{
+  display: flex;
+  flex: 1;
+  width: 100%;
+  /* border: 1px solid #000; */
+  padding: 10px;
+}
+
+.plantOperatorsList{
+    width: 250px;
+}
+.plantOperatorsList h4{
+    text-align: center;
+}
+
+.plantOperatorsList ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0 5px;
+}
+
+.plantOperatorsList ul li{
+    padding: 10px;
+    border-bottom: 1px solid #9a9797;
+}
+
+.ConsolidatedChartBox{
+    flex: 1;
+    min-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border: 1px solid #9a9797;
+    border-radius: 10px;
+}
+
+.ConsolidatedChartBox {
+    width: 100%;
+    height: 400px; /* Ensure a fixed height */
+    min-width: 300px; /* Prevent it from collapsing */
+  }
+  .chartBox {
+    width: 100%;
+    height: 100%;
+  }
+  
+
+  /* .barChart{
+    position: relative;
+    top: -100%;
+  } */
+  .lineChart{
+    width: 5%;
+  }
+
+  .responsiveContainer{
+    width: 100%;
+    height: 100%;
+  }

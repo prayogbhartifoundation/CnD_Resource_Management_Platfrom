@@ -18,24 +18,34 @@ import AgencyResetPassword from "./pages/AgencyPages/AgencyResetPassword";
 import PlantHome from "./pages/PlantPages/PlantHome";
 import PlantLogin from "./pages/PlantPages/PlantLogin";
 import PlantResetPassword from "./pages/PlantPages/PlantResetPassword";
+import InventoryStatusPageBeta from "./pages/InventoryStatusPageBeta";
+import VisitorInfoForm from "./utils/VisitorInfoForm";
+import DepartmentPage from "./pages/DepartmentPage";
+import logo from "./assets/logo/Everenviro Logo-01.png"
+import PlantPage from "./pages/plantPage";
 
 function App() {
 
   const [sideBarOpen, setSideBarOpen] = useState(false)
+  const [propData,setPropData] = useState(0)
 
   return (
     <Router>
       <header className="app-header">
-        <div className="branding"></div>
+        <div className="branding">
+          <img src={logo} alt="logo" />
+          <h4 style={{color:'#5e3786',fontSize:'20px'}}>CND OFFTAKE NCR</h4>
+        </div>
         <nav>
           <ul>
             <li><Link to="/">Home<b></b></Link></li>
-            <li><Link to="/inventory">Inventory Status</Link></li>
+            {/* <li><Link to="/inventory">Inventory Status</Link></li> */}
+            <li><Link to="/inventoryBeta">Inventory Status</Link></li>
             <li><Link to="/product">Products</Link></li>
             <li><Link to="/agencies">Agencies</Link></li>
             <li><Link to="/contact">Contact Us</Link></li>
-            <li><Link to="/agency-home">Agent Page</Link></li>
-            <li><Link to="/plant-home">Plant Page</Link></li>
+            {/* <li><Link to="/agency-home">Agency Page</Link></li>
+            <li><Link to="/plant-home">Plant Page</Link></li> */}
             {/* <li><Link to="/Login">Login</Link></li> */}
           </ul>
         </nav>
@@ -47,10 +57,13 @@ function App() {
 
       <main>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<HomePage setPropData= {setPropData}/>} />
           <Route path="/inventory" element={<InventoryStatusPage />} />
+          <Route path="/inventoryBeta" element={<InventoryStatusPageBeta />} />
           <Route path="/offtake" element={<OfftakeStatusPage />} />
           <Route path="/agencies" element={<AgencyPage />} />
+          <Route path="/plant" element={<PlantPage plantInfo= {propData}/>} />
+          <Route path="/department" element={<DepartmentPage />} />
           <Route path="/product" element={<ProductPage />} />
           <Route path="/contact" element={<ContactUsPage />} />
           <Route path="/s_admin-reg" element={<SuperAdminReg />} />
@@ -64,9 +77,12 @@ function App() {
           <Route path="/plant-home" element={<PlantHome />} />
           <Route path="/Login" element={<LoginNewPage />} />
         </Routes>
+        <VisitorInfoForm/>
       </main>
 
-      <footer className="app-footer">Page Footer</footer>
+      <footer className="app-footer">
+      © 2025 Indo Enviro Integrated Solutions (P) Limited. All rights reserved.
+      </footer>
     </Router>
   );
 }

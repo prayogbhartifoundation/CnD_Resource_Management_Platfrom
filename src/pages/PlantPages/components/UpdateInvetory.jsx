@@ -1,27 +1,61 @@
-import React, { useState } from "react";
-import '../../../styles/FormStyle.css'
+import React, { useEffect, useState } from "react";
+import "../../../styles/FormStyle.css";
+import axios from "axios";
 
-const UpdateInvetory = () => {
+const UpdateInvetory = ({ plantId }) => {
   const defaultForm = {
-    location: "",
-    contact: "",
-    contactEmail: "",
+    plantId,
+    prodDetails: [
+      {
+        prodName: "",
+        addedQnt: "",
+      },
+    ],
   };
 
   const [formData, setFormData] = useState(defaultForm);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+  const [prodList, setProdList] = useState([]);
+  const [submited, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8081/api/get_products")
+      .then((res) => {
+        console.log(res);
+        if (res.data.status === "success") {
+          setProdList(res.data.data);
+        } else {
+          alert("something wrong, check logs !!");
+        }
+      })
+      .catch((err) => console.log(err));
+  }, [submited]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        "http://localhost:8081/api/update_inventory",
+        formData
+      );
+      if (response.data.Status === "Success") {
+        alert("product added Successfully !!");
+        setFormData(defaultForm);
+        setSubmitted(!submited);
+      } else {
+        alert(`something wrong !! \n ${response.data.error}`);
+      }
+    } catch (err) {
+      console.log(err);
+    }
   };
+
   return (
     <div className="updateInventory">
-        <label htmlFor="location">Update Inventory</label>
-        <br />
-        <br />
+      <label htmlFor="location">Update Inventory</label>
+      <br />
+      <br />
       <div className="form-cont">
         <form
           action=""
@@ -31,66 +65,83 @@ const UpdateInvetory = () => {
             <thead>
               <th>Sno.</th>
               <th>Product Name</th>
+              <th>Available Quantity</th>
               <th>Quantity to add</th>
               <th>Total Quantity</th>
             </thead>
 
             <tbody>
-              <tr>
-                <td>1.</td>
-                <td>
-                  <label htmlFor="location">Plant Location:</label>
-                </td>
+              {prodList &&
+                prodList.map((p, index) => {
+                  const plantIndex = p.plantWise.findIndex(
+                    (p) => p.plantId === plantId
+                  );
+                  console.log(plantIndex);
+                  console.log(plantId);
 
-                <td>
-                  <input
-                    type="text"
-                    id="location"
-                    name="location"
-                    value={formData.location}
-                    onChange={handleChange}
-                    required
-                  />
-                </td>
-                <td>
-                  <input
-                    type="text"
-                    id="location"
-                    name="location"
-                    value={formData.location}
-                    onChange={handleChange}
-                    required
-                  />
-                </td>
-              </tr>
-              
-              <tr>
-                <td>1.</td>
-                <td>
-                  <label htmlFor="location">Plant Location:</label>
-                </td>
+                  // Ensure formData.prodDetails[index] exists
+                  if (!formData.prodDetails[index]) {
+                    setFormData((prevData) => {
+                      const updatedProdDetails = [...prevData.prodDetails];
+                      updatedProdDetails[index] = {
+                        prodName: p.prodName,
+                        addedQnt: "",
+                      };
+                      return { ...prevData, prodDetails: updatedProdDetails };
+                    });
+                  }
+                  return (
+                    <tr>
+                      <td>{index + 1}.</td>
+                      <td>
+                        <label htmlFor="location">{p.prodName}</label>
+                      </td>
+                      <td>
+                        {plantIndex > -1 ? (
+                          <label htmlFor="addedQnt">
+                            {p.plantWise[plantIndex].qnt}
+                          </label>
+                        ) : 0}
+                      </td>
 
-                <td>
-                  <input
-                    type="text"
-                    id="location"
-                    name="location"
-                    value={formData.location}
-                    onChange={handleChange}
-                    required
-                  />
-                </td>
-                <td>
-                  <input
-                    type="text"
-                    id="location"
-                    name="location"
-                    value={formData.location}
-                    onChange={handleChange}
-                    required
-                  />
-                </td>
-              </tr>
+                      <td>
+                        <input
+                          type="text"
+                          id="addedQnt"
+                          name="addedQnt"
+                          value={formData.prodDetails[index]?.addedQnt}
+                          onChange={(e) => {
+                            const { value } = e.target;
+                            setFormData((prevData) => {
+                              const updatedProdDetails = [
+                                ...prevData.prodDetails,
+                              ];
+                              updatedProdDetails[index] = {
+                                ...updatedProdDetails[index],
+                                addedQnt: value,
+                                prodName: p.prodName,
+                              };
+                              return {
+                                ...prevData,
+                                prodDetails: updatedProdDetails,
+                              };
+                            });
+                          }}
+                          required
+                        />
+                      </td>
+                      <td>
+                        <label>
+                          {plantIndex > -1 &&
+                          formData.prodDetails[index]?.addedQnt
+                            ? +formData.prodDetails[index].addedQnt +
+                              +p.plantWise[plantIndex].qnt
+                            : p.plantWise[plantIndex]?.qnt || 0}
+                        </label>
+                      </td>
+                    </tr>
+                  );
+                })}
             </tbody>
           </table>
 
@@ -106,8 +157,9 @@ const UpdateInvetory = () => {
               color: "#fff",
               cursor: "pointer",
             }}
+            onClick={handleSubmit}
           >
-            Register
+            Update Inventory
           </button>
         </form>
 
@@ -115,8 +167,6 @@ const UpdateInvetory = () => {
       </div>
 
       <hr />
-
-      
     </div>
   );
 };
