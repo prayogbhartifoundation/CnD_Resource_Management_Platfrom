@@ -23,6 +23,7 @@ import VisitorInfoForm from "./utils/VisitorInfoForm";
 import DepartmentPage from "./pages/DepartmentPage";
 import logo from "./assets/logo/Everenviro Logo-01.png"
 import PlantPage from "./pages/plantPage";
+import CityWiseOfftakeAnalytics from "./pages/CityWiseOfftakeAnalytics";
 
 function App() {
 
@@ -64,6 +65,7 @@ function App() {
           <Route path="/agencies" element={<AgencyPage />} />
           <Route path="/plant" element={<PlantPage plantInfo= {propData}/>} />
           <Route path="/department" element={<DepartmentPage />} />
+          <Route path="/cityWiseOfftake" element={<CityWiseOfftakeAnalytics />} />
           <Route path="/product" element={<ProductPage />} />
           <Route path="/contact" element={<ContactUsPage />} />
           <Route path="/s_admin-reg" element={<SuperAdminReg />} />
@@ -77,7 +79,7 @@ function App() {
           <Route path="/plant-home" element={<PlantHome />} />
           <Route path="/Login" element={<LoginNewPage />} />
         </Routes>
-        <VisitorInfoForm/>
+        {/* <VisitorInfoForm/> */}
       </main>
 
       <footer className="app-footer">

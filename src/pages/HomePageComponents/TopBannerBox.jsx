@@ -1,52 +1,97 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles/TopBannerBox.css";
 import { useNavigate } from "react-router-dom";
+import InfoBox from "./InfoBox";
+import TargetConsolidatedChartBox from "./TargetConsolidatedChartBox";
 
-const TopBannerBox = ({ plants, plantOperators, setPropData }) => {
+const TopBannerBox = ({ plants, plantOperators, products, setPropData }) => {
+  const [selectedAgency, setSelectedAgency] = useState(-1);
   const visiblePlants = plants.slice(0, 15); // Only take the first 15 items
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const agencyList = plantOperators;
+  const prodList = products;
+  const plantList = plants;
 
   const handleChange = () => {
-    setPropData("test")
-  }
+    setPropData("test");
+  };
 
   return (
     <div class="parent">
-      <div className="div1">Objectives</div>
-
-      {visiblePlants.map((plant, index) => {
-        const po = plantOperators.find((p) =>
-          p.plants?.some((pl) => pl.plantId === plant?.plantId)
-        );
-        return (
-          <div key={index} className={`div${index + 2}`}
-          onClick={() => {
-            handleChange();
-            navigate('/plant')
-          }}
-          >
-            <div className="titleBox">
-              <span>{plant?.location}</span>
-              <i scrollamount="3">{po?.agency}</i>
-              <hr style={{ width: "100%" }} />
+      <div className="div1">
+        {/* <h3>Plant Operators</h3> */}
+        <div className="homePage-listBox">
+          <div className="leftPanel">
+            <div>
+              <h2>Plant Operators</h2>
+              {/* <h2>Total Plants</h2>
+              <h2>Total Products</h2>
+              <h2>Total Offtake (MT)</h2> */}
+              {/* <button style={{ opacity: 0 }}>⬇️</button> */}
             </div>
-            {plant ? (
-              <>
-                <span>Offtake (MT)</span>
-                <span>01.04.24-15.02.25 : 7851.24</span>
-              </>
-            ) : (
-              "--"
-            )}
-          </div>
-        );
-      })}
 
-      {visiblePlants.length > 9 && (
-        <div className="divMore">
-          <a href="/more-plants">More &gt;&gt;</a>
+            {agencyList.map((agency, index) => {
+              return (
+                <>
+                  <div key={agency.agency_id}>
+                    <h2>{agency.agency}</h2>
+                    {/* <h2>{agency?.plants?.length}</h2>
+                    <h2>
+                      {agency.plants.reduce((total, ap) => {
+                        const prodCount = prodList.filter((prod) =>
+                          prod.plantWise.some((pw) => pw.plantId === ap.plantId)
+                        ).length;
+                        return total + prodCount;
+                      }, 0)}
+                    </h2>
+                    <h2>--</h2> */}
+                    <button
+                      onClick={() => {
+                        setSelectedAgency(
+                          selectedAgency === index ? -1 : index
+                        );
+                      }}
+                    >
+                      ⬇️
+                    </button>
+                  </div>
+                  {selectedAgency === index && (
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "flex-start",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      {agencyList[index].plants.map((ap) => {
+                        const plant = plantList.find(
+                          (p) => p.plantId === ap.plantId
+                        );
+                        return (
+                          <div style={{ display: "inline-block" }}>
+                            {plant?.location}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+                </>
+              );
+            })}
+          </div>
         </div>
-      )}
+      </div>
+      <div className="div2">
+      Objectives
+      {/* <TargetConsolidatedChartBox plantOperators={agencyList}/> */}
+      </div>
+
+      <div className="div3">
+        <InfoBox/>
+        
+      </div>
+     
     </div>
   );
 };

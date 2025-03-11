@@ -31,6 +31,10 @@
   overflow-y: auto;
 }
 
+.homePage-listBox::-webkit-scrollbar {
+  display: none;
+}
+
 .extended-details{
   flex: 1;
   display: flex;
@@ -43,10 +47,13 @@
 
 
 .homePage-overview-details {
+
+  max-width: 95vw;
+
   background-color: rgb(245, 243, 252);
   box-shadow: 2px 2px 6px 2px #d0a1fa;
   border: 2px solid rgb(236, 229, 254);
-  padding: 1rem;
+  /* padding: 1rem; */
   /* width: 100%; */
   /* text-align: center; */
   border-radius: 15px;
@@ -96,7 +103,7 @@
   flex: 1;
   font-size: 12px;
   text-align: left;
-  border-right: 1px solid #000;
+  /* border-right: 1px solid #000; */
 }
 .homePage-listBox .leftPanel div h2{
   width: 20%;
@@ -111,7 +118,7 @@
   flex: 1;
   font-size: 12px;
   text-align: left;
-  border-right: 1px solid #000;
+  /* border-right: 1px solid #000; */
 }
 .homePage-listBox .leftPanel div:last-child h2{
   /* width: 20%; */

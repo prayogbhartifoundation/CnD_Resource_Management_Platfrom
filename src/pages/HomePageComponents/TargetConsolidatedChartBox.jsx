@@ -71,17 +71,22 @@ const TargetConsolidatedChartBox = ({ plantOperators }) => {
   return (
     <div className="TargetConsolidatedChartBox">
     
-    <div className="titleBox">PlantOperators Offtake Status (01.04.24 to 31.01.25)</div>
+    <div className="CharttitleBox">
+      <span>City Wise Offtake Status (01.04.24 to 31.01.25)</span>
+      <select name="" id="">
+        <option value="NCR">Delhi NCR</option>
+      </select>
+    </div>
 
     <div className="main">
-      <div className="plantOperatorsList">
+      {/* <div className="plantOperatorsList">
         <h4>Plant Operators</h4>
         <ul>
           {plantOperators.map((plantOperator, index) => (
             <li key={index}>{plantOperator.agency}</li>
           ))}
         </ul>
-      </div>
+      </div> */}
 
       <div className="ConsolidatedChartBox">
         <h4>Target vs. Actual Chart <i style={{fontSize:'13px'}}>(** Sample Data, Actual Data linking to chart is in progress)</i></h4>

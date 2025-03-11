@@ -23,6 +23,11 @@ const btnGroup = [
     title: "Total Inventory",
     navigate: "/inventoryBeta",
   },
+  {
+    logo: "📊",
+    title: "City Wise Offtake Analytics",
+    navigate: "/cityWiseOfftake",
+  },
 ];
 
 const ActionBtnRow = () => {
