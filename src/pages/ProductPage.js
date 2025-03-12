@@ -85,7 +85,7 @@ function ProductPage() {
     <div className="product-page">
       {/* Header Section */}
       <header>
-        <h2>Product Name</h2>
+        <h1>Product Name</h1>
         <div className="inp-box">
           <label htmlFor="">🔍</label>
           <input

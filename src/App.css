@@ -11,7 +11,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(to right, #662D91 0.05%, #AC466C 79.07%, #E1594F 99.96%);
+  /* background: linear-gradient(to right, #662D91 0.05%, #AC466C 79.07%, #E1594F 99.96%); */
+  background : #009998;
   padding: 1rem;
   z-index: 999;
 }
@@ -32,9 +33,9 @@ body {
   position: relative;
   top: -5px;
 }
-
 .branding img{
-  width: 120px;
+  height:56px;
+  width: 100px;
 }
 
 nav ul {
@@ -51,7 +52,7 @@ nav ul li a {
   /* background-color: #662D91; */
   text-transform:uppercase;
   color: white;
-  font-weight: 500;
+  font-weight:lighter;
   font-size: medium;
   position: relative;
   /* border-radius: 5px; */
@@ -79,7 +80,8 @@ main{
 
 /* Footer */
 .app-footer {
-  background: linear-gradient(to right, #662D91 0.05%, #AC466C 79.07%, #E1594F 99.96%);
+  /* background: linear-gradient(to right, #662D91 0.05%, #AC466C 79.07%, #E1594F 99.96%); */
+  background : #009998;
   color: rgb(0, 0, 0);
   text-align: center;
   padding: 1.5rem 0;

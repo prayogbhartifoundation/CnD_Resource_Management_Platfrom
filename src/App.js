@@ -21,7 +21,7 @@ import PlantResetPassword from "./pages/PlantPages/PlantResetPassword";
 import InventoryStatusPageBeta from "./pages/InventoryStatusPageBeta";
 import VisitorInfoForm from "./utils/VisitorInfoForm";
 import DepartmentPage from "./pages/DepartmentPage";
-import logo from "./assets/logo/Everenviro Logo-01.png"
+import logo from "./assets/logo/C & D Logo-Photoroom.png";
 import PlantPage from "./pages/plantPage";
 import CityWiseOfftakeAnalytics from "./pages/CityWiseOfftakeAnalytics";
 
@@ -35,7 +35,7 @@ function App() {
       <header className="app-header">
         <div className="branding">
           <img src={logo} alt="logo" />
-          <h4 style={{color:'#5e3786',fontSize:'20px'}}>CND OFFTAKE NCR</h4>
+          <h4 style={{color:'#009998',fontSize:'15px'}}>CND OFFTAKE NCR</h4>
         </div>
         <nav>
           <ul>
