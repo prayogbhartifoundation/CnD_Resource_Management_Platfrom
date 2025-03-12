@@ -11,12 +11,12 @@ body {
   justify-content: center;
   align-items: center;
   height: 12vh;
-  background: linear-gradient(to left, #662D91 0.05%, #AC466C 79.07%, #E1594F 99.96%);
+  /* background: linear-gradient(to left, #662D91 0.05%, #AC466C 79.07%, #E1594F 99.96%); */
 }
 .inventory-header h1 {
   margin: 0;
   font-size: 2rem;
-  color: #ffffff;
+  color: #325A58;
   text-align: center;
 }
 
@@ -74,7 +74,7 @@ body {
   border-collapse: collapse;
 }
 .inventory-table th {
-  background-color: #000000;
+  background-color: #0A446D ;
   font-size: 12px;
   color: white;
   padding: 1rem;
