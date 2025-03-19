@@ -4,69 +4,98 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import TopBannerBox from "./HomePageComponents/TopBannerBox";
 import ActionBtnRow from "./HomePageComponents/ActionBtnRow";
+import InfoBox from "./HomePageComponents/InfoBox";
+import TargetConsolidatedChartBox from "./HomePageComponents/TargetConsolidatedChartBox";
 
-// Importing local images
-import image1 from "../assets/PlantImages/image_1.jpg";
-import image2 from "../assets/PlantImages/image_2.jpg";
-import image3 from "../assets/PlantImages/image_3.jpg";
-import image4 from "../assets/PlantImages/image_4.jpg";
-
-const images = [image1, image2, image3, image4];
-
-function HomePage({ setPropData }) {
+function HomePage({setPropData}) {
   const [prodList, setProdList] = useState([]);
   const [agencyList, setAgencyList] = useState([]);
   const [plantList, setPlantList] = useState([]);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const navigate = useNavigate();
+  const [selectedAgency, setSelectedAgency] = useState(-1);
+  
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000); // Change image every 5 seconds
-
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const prodsRes = await axios.get("http://localhost:8081/api/get_products");
-        if (prodsRes.data.status === "success") setProdList(prodsRes.data.data);
-
-        const agenciesRes = await axios.get("http://localhost:8081/api/getAgencies");
-        if (agenciesRes.data.Status === "Success") setAgencyList(agenciesRes.data.data);
-
-        const plantsRes = await axios.get("http://localhost:8081/api/getPlants");
-        if (plantsRes.data.Status === "Success") setPlantList(plantsRes.data.data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
+    const getProds = () => {
+      axios
+        .get("http://localhost:8081/api/get_products")
+        .then((res) => {
+          console.log(res);
+          if (res.data.status === "success") {
+            setProdList(res.data.data);
+            // setFilteredProdList(res.data.data);
+          } else {
+            alert("something wrong,1 check logs !!");
+          }
+        })
+        .catch((err) => console.log(err));
     };
-    fetchData();
+    const getAgencies = () => {
+      axios
+        .get("http://localhost:8081/api/getAgencies")
+        .then((res) => {
+          console.log(res);
+          if (res.data.Status === "Success") {
+            setAgencyList(res.data.data);
+          } else {
+            alert("something wrong,2 check logs !!");
+          }
+        })
+        .catch((err) => console.log(err));
+    };
+    const getPlants = () => {
+      axios
+        .get("http://localhost:8081/api/getPlants")
+        .then((res) => {
+          console.log(res);
+          if (res.data.Status === "Success") {
+            setPlantList(res.data.data);
+          } else {
+            alert("something wrong,3 check logs !!");
+          }
+        })
+        .catch((err) => console.log(err));
+    };
+
+    getProds();
+    getAgencies();
+    getPlants();
   }, []);
 
+  const navigate = useNavigate();
   return (
     <div className="home-page">
-      <section
-        className="homePage-overview-details"
-        style={{
-          backgroundImage: `url(${images[currentImageIndex]})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          transition: "background-image 1s ease-in-out",
-        }}
-      >
-        <TopBannerBox
-          plants={plantList}
-          plantOperators={agencyList}
-          products={prodList}
-          setPropData={setPropData}
-        />
+      {/* <section>Dashboard</section> */}
+      <section className="homePage-overview-details">
+        <TopBannerBox plants={plantList} plantOperators={agencyList} products={prodList} setPropData={setPropData}/>
+        {/* <InfoBox/> */}
       </section>
       <section className="homePage-overview-details">
-        <ActionBtnRow />
+        <ActionBtnRow/>
       </section>
+      {/* <section className="homePage-overview-details">
+        <TargetConsolidatedChartBox plantOperators={agencyList}/>
+      </section> */}
+      
+
+      {/* <section className="action-btns">
+        <button type="button" onClick={() => navigate('/offtake')} className="status-button">Offtake Status</button>
+        <button type="button" onClick={() => navigate('/inventoryBeta')} className="status-button">Inventory Status</button>
+      </section>
+
+      <section className="agency-cards">
+        <div className="card">
+          <h3>Agency Page 1</h3>
+          <p>Details of Agency 1</p>
+        </div>
+        <div className="card">
+          <h3>Agency Page 2</h3>
+          <p>Details of Agency 2</p>
+        </div>
+        <div className="card">
+          <h3>Agency Page 3</h3>
+          <p>Details of Agency 3</p>
+        </div>
+      </section> */}
     </div>
   );
 }

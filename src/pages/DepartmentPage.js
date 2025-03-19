@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../styles/DepartmentPage.css";
+import "../styles/ProductPage.css";
 import axios from "axios";
 
 const departmentList = [
@@ -84,7 +84,7 @@ function DepartmentPage() {
   }, []);
 
   return (
-    <div className="department-page">
+    <div className="product-page">
       {/* Header Section */}
       <header>
         <h2>Departments</h2>
