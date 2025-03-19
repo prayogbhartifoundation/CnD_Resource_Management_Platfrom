@@ -19,32 +19,17 @@ const TopBannerBox = ({ plants, plantOperators, products, setPropData }) => {
   return (
     <div class="parent">
       <div className="div1">
-        {/* <h3>Plant Operators</h3> */}
         <div className="homePage-listBox">
           <div className="leftPanel">
-            <div>
+            {/* <div>
               <h2>Plant Operators</h2>
-              {/* <h2>Total Plants</h2>
-              <h2>Total Products</h2>
-              <h2>Total Offtake (MT)</h2> */}
-              {/* <button style={{ opacity: 0 }}>⬇️</button> */}
-            </div>
+            </div> */}
 
             {agencyList.map((agency, index) => {
               return (
                 <>
                   <div key={agency.agency_id}>
                     <h2>{agency.agency}</h2>
-                    {/* <h2>{agency?.plants?.length}</h2>
-                    <h2>
-                      {agency.plants.reduce((total, ap) => {
-                        const prodCount = prodList.filter((prod) =>
-                          prod.plantWise.some((pw) => pw.plantId === ap.plantId)
-                        ).length;
-                        return total + prodCount;
-                      }, 0)}
-                    </h2>
-                    <h2>--</h2> */}
                     <button
                       onClick={() => {
                         setSelectedAgency(
@@ -81,15 +66,14 @@ const TopBannerBox = ({ plants, plantOperators, products, setPropData }) => {
             })}
           </div>
         </div>
+        <div className="objectives">
+          {/* <h2>Objectives</h2> */}
+          {/* <TargetConsolidatedChartBox plantOperators={agencyList}/> */}
+        </div>
       </div>
-      <div className="div2">
-      Objectives
-      {/* <TargetConsolidatedChartBox plantOperators={agencyList}/> */}
-      </div>
-
+      
       <div className="div3">
         <InfoBox/>
-        
       </div>
      
     </div>

@@ -5,6 +5,7 @@ import InventoryStatusPage from "./pages/InventoryStatusPage";
 import AgencyPage from "./pages/AgencyPage";
 import ProductPage from "./pages/ProductPage";
 import ContactUsPage from "./pages/ContactUsPage";
+import Dashboard from "./pages/Dashboard";
 import LoginNewPage from "./pages/LoginNewPage";
 import './App.css';
 import Sidebar from "./components/Sidebar";
@@ -21,7 +22,8 @@ import PlantResetPassword from "./pages/PlantPages/PlantResetPassword";
 import InventoryStatusPageBeta from "./pages/InventoryStatusPageBeta";
 import VisitorInfoForm from "./utils/VisitorInfoForm";
 import DepartmentPage from "./pages/DepartmentPage";
-import logo from "./assets/logo/C & D Logo-Photoroom.png";
+import logo from "./assets/logo/LogoNew.jpg";
+import SwachhLogo from "./assets/logo/Swachh-Bharat-Abhiyan.jpg";
 import PlantPage from "./pages/plantPage";
 import CityWiseOfftakeAnalytics from "./pages/CityWiseOfftakeAnalytics";
 
@@ -32,11 +34,15 @@ function App() {
 
   return (
     <Router>
+
+      {/* Add this logo container */}
+  <div className="body-logo">
+    <img src={logo} alt="Watermark Logo" />
+    <img src={SwachhLogo} alt="Swachh Logo" />
+
+  </div>
+
       <header className="app-header">
-        <div className="branding">
-          <img src={logo} alt="logo" />
-          <h4 style={{color:'#009998',fontSize:'15px'}}>CND OFFTAKE NCR</h4>
-        </div>
         <nav>
           <ul>
             <li><Link to="/">Home<b></b></Link></li>
@@ -45,6 +51,7 @@ function App() {
             <li><Link to="/product">Products</Link></li>
             <li><Link to="/agencies">Agencies</Link></li>
             <li><Link to="/contact">Contact Us</Link></li>
+            <li><Link to="/Dashboard">Dashboard</Link></li>
             {/* <li><Link to="/agency-home">Agency Page</Link></li>
             <li><Link to="/plant-home">Plant Page</Link></li> */}
             {/* <li><Link to="/Login">Login</Link></li> */}

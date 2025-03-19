@@ -1,24 +1,32 @@
 .infoBox {
-    flex: 1;
+    position: absolute; /* Position it relative to the body */
+    right: 12px; /* Align to the right */
+    top: 46%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for perfect centering */
+    
     border-radius: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 5px;
-    width: 100%;
-    /* max-width: 400px; Adjust as needed */
+    width: 265px; /* Adjust width as needed */
+    height: 42%;
     overflow: hidden;
-    box-shadow: 2px 2px 6px 2px #a244717b!important  ;
+    box-shadow: 2px 2px 6px 2px #a244717b !important;
     background-color: #f9cdcd;
+}
 
+/* Ensure the body takes up full height */
+body {
+    position: relative;
+    min-height: 100vh;
 }
 
 /* Swiper container */
 .swiper {
     width: 100%;
     height: 100%;
-    
     border-radius: 7px;
 }
 
@@ -27,13 +35,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
-
     width: 100%;
     height: 100%;
     background-color: #fff;
 }
-
 
 /* Image styling */
 .carousel-img {
@@ -42,12 +47,11 @@
     object-fit: cover;
 }
 
-
-.slide-content .imgDetails{
+/* Image details */
+.slide-content .imgDetails {
     flex: 1;
     display: flex;
     align-items: center;
     text-align: center;
     font-weight: 600;
-
 }
