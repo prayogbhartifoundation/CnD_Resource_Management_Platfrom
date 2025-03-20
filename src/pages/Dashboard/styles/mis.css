@@ -1,0 +1,184 @@
+.offtakeMis {
+    width: 100%;
+    flex: 1;
+    border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: fit-content;
+}
+
+
+.filterPopup{
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    width: 50%;
+    height: 30%;
+    box-shadow: 0 0 20px 2px rgb(119, 115, 115)  ;
+    background: rgb(255, 255, 255);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    padding: 10px;
+}
+
+.filterPopup .filterPopupContent{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid #a1a1a1;
+    border-radius: 13px;
+}
+
+.filterPopup .filterPopupContent .filterPopupHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #2e7d32;
+    color: rgb(255, 255, 255);
+    border-radius: 12px 12px 0 0;
+}
+
+.filterPopup .filterPopupContent .filterPopupBody{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}   
+
+.filterPopup .filterPopupContent .filterPopupBody .filterPopupRow{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.filterPopup .filterPopupContent .filterPopupBody .filterPopupRow .dateRange,
+.filterPopup .filterPopupContent .filterPopupBody .filterPopupRow select{
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #000;
+    
+    min-width: 250px;
+    max-width: 250px;
+}
+.filterPopup .filterPopupContent .filterPopupBody .filterPopupRow .dateRange{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.offtakeMis .topBar {
+    width: 98%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 10px;
+  border-radius: 0px;
+  font-weight: bold;
+  gap: 10px;
+  border-bottom: 1px solid #000;
+  margin-bottom: 10px;
+}
+
+.offtakeMis .topBar .filters{
+    margin: 0;
+}
+
+.offtakeMis .topBar .title{
+    flex: 1;
+}
+
+.offtakeMis .topBar .filter-btn{
+    background: #46a0c7;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.offtakeMis .topBar .filter-btn:hover{
+    background: #2e447d;
+}
+
+.disabled{
+    color: #6d6c6c;
+    /* color: #000; */
+    cursor: not-allowed;
+}
+
+
+.misTable{
+    flex: 1;
+    width: 98%;
+    max-height: 450px;
+    padding: 10px;
+    padding-top: 0;
+    overflow: auto;
+}
+
+.misTable table{
+    position: relative;
+    width: 100%;
+    border-collapse: collapse;
+    /* margin-top: 10px; */
+    /* background-color: red; */
+}
+
+.misTable table thead tr{
+    /* background: #388f3c; */
+    color: rgb(255, 255, 255);
+}
+
+.misTable table th{
+    position: sticky;
+    top: 0px;
+    background: #388f3c;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    font-weight: bold;
+    text-align: left;
+    /* border: 1px solid #9b9b9b; */
+}
+
+.misTable table th span{
+    display: block;
+    font-size: 12px;
+    margin-top: 5px;
+    color: rgb(0, 0, 0);
+}
+
+.misTable table td{
+    padding: 10px;
+    border: 1px solid #9b9b9b;
+    text-align: right;
+}
+
+.misTable table tr td:nth-child(1),
+.misTable table tr td:nth-child(2){
+    text-align: left;
+}
+
+.misTable table tr td:nth-child(2),
+.misTable table tr td:last-child{
+    font-weight: bold;
+}
+
+.misTable table tbody tr:last-child{
+    background: #b6fbb6;
+    position: sticky;
+    bottom: -10px;
+}
+
+.selectedRow td{
+    background: #d0f5ec;
+    font-size: smaller;
+}

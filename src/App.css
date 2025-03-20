@@ -4,6 +4,25 @@ body {
   background-color: #ffffff;
 }
 
+
+.body-logo {
+  height: 70px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between; /* Align items to left and right */
+  align-items: center;
+  padding: 0 20px; /* Add padding for spacing */
+}
+
+.body-logo img:first-child {
+  height: 100%; /* Maintain aspect ratio */
+}
+
+.body-logo img:last-child {
+  margin-left: auto; /* Push Swachh logo to the right */
+  height: 100%;
+}
+
 /* Header */
 .app-header {
   position: sticky;
@@ -12,7 +31,8 @@ body {
   align-items: center;
   justify-content: space-between;
   /* background: linear-gradient(to right, #662D91 0.05%, #AC466C 79.07%, #E1594F 99.96%); */
-  background : #009998;
+  /* background : #009998; */
+  background: linear-gradient(to right,#0A446D 0.05%,#01AF52 79.07%);
   padding: 1rem;
   z-index: 999;
 }
@@ -38,12 +58,23 @@ body {
   width: 100px;
 }
 
+.app-header nav {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.app-header nav .body-logo{
+  height: 40px;
+}
+
 nav ul {
   list-style: none;
   display: flex;
   gap: 1rem;
   margin: 0;
-  padding: 0;
+  padding: 1% 0;
 }
 
 nav ul li a {
@@ -113,6 +144,21 @@ main{
 
   .app-header nav{
     display: none;
+  }
+
+  .body-logo {
+    /* flex-direction: column; */
+    align-items: center;
+    height: 70px;
+  }
+
+  .body-logo img {
+    max-width: 80%; /* Scale down for smaller screens */
+    height: auto;
+  }
+
+  .body-logo img:last-child {
+    margin-left: 0; /* Center Swachh logo on small screens */
   }
 
 } 

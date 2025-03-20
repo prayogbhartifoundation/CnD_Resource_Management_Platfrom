@@ -1,5 +1,6 @@
 .infoBox {
     flex: 1;
+    
     border-radius: 12px;
     display: flex;
     flex-direction: column;
@@ -12,6 +13,11 @@
     box-shadow: 2px 2px 6px 2px #a244717b!important  ;
     background-color: #f9cdcd;
 
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
 }
 
 /* Swiper container */

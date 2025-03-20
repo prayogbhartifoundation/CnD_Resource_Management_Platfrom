@@ -6,7 +6,7 @@ import AgencyPage from "./pages/AgencyPage";
 import ProductPage from "./pages/ProductPage";
 import ContactUsPage from "./pages/ContactUsPage";
 import LoginNewPage from "./pages/LoginNewPage";
-import './App.css';
+import "./App.css";
 import Sidebar from "./components/Sidebar";
 import OfftakeStatusPage from "./pages/OfftakeStatusPage";
 import SuperAdminLogin from "./pages/superAdminPages/SuperAdminLogin";
@@ -21,51 +21,83 @@ import PlantResetPassword from "./pages/PlantPages/PlantResetPassword";
 import InventoryStatusPageBeta from "./pages/InventoryStatusPageBeta";
 import VisitorInfoForm from "./utils/VisitorInfoForm";
 import DepartmentPage from "./pages/DepartmentPage";
-import logo from "./assets/logo/C & D Logo-Photoroom.png";
+import logo from "./assets/logo/LogoNew.jpg";
 import PlantPage from "./pages/plantPage";
 import CityWiseOfftakeAnalytics from "./pages/CityWiseOfftakeAnalytics";
 
-function App() {
+import SwachhLogo from "./assets/logo/Swachh-Bharat-Abhiyan.jpg";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
-  const [sideBarOpen, setSideBarOpen] = useState(false)
-  const [propData,setPropData] = useState(0)
+function App() {
+  const [sideBarOpen, setSideBarOpen] = useState(false);
+  const [propData, setPropData] = useState(0);
 
   return (
     <Router>
+        <div className="body-logo">
+          <img src={logo} alt="Watermark Logo" />
+          <img src={SwachhLogo} alt="Swachh Logo" />
+        </div>
       <header className="app-header">
-        <div className="branding">
+        {/* <div className="branding">
           <img src={logo} alt="logo" />
           <h4 style={{color:'#009998',fontSize:'15px'}}>CND OFFTAKE NCR</h4>
-        </div>
+        </div> */}
         <nav>
           <ul>
-            <li><Link to="/">Home<b></b></Link></li>
+            <li>
+              <Link to="/">
+                Home<b></b>
+              </Link>
+            </li>
             {/* <li><Link to="/inventory">Inventory Status</Link></li> */}
-            <li><Link to="/inventoryBeta">Inventory Status</Link></li>
-            <li><Link to="/product">Products</Link></li>
-            <li><Link to="/agencies">Agencies</Link></li>
-            <li><Link to="/contact">Contact Us</Link></li>
+            <li>
+              <Link to="/inventoryBeta">Inventory Status</Link>
+            </li>
+            <li>
+              <Link to="/product">Products</Link>
+            </li>
+            <li>
+              <Link to="/agencies">Agencies</Link>
+            </li>
+            <li>
+              <Link to="/dashboard">Dashboard</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact Us</Link>
+            </li>
             {/* <li><Link to="/agency-home">Agency Page</Link></li>
             <li><Link to="/plant-home">Plant Page</Link></li> */}
             {/* <li><Link to="/Login">Login</Link></li> */}
           </ul>
+
+          <div className="body-logo">
+          <img src={logo} alt="Watermark Logo" />
+          <img src={SwachhLogo} alt="Swachh Logo" />
+        </div>
         </nav>
 
-        <div className="hamburger" onClick={() => setSideBarOpen(!sideBarOpen)}>📄</div>
+        <div className="hamburger" onClick={() => setSideBarOpen(!sideBarOpen)}>
+          📄
+        </div>
       </header>
 
-      {sideBarOpen && <Sidebar setSideBarOpen={setSideBarOpen}/>}
+      {sideBarOpen && <Sidebar setSideBarOpen={setSideBarOpen} />}
 
       <main>
         <Routes>
-          <Route path="/" element={<HomePage setPropData= {setPropData}/>} />
+          <Route path="/" element={<HomePage setPropData={setPropData} />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/inventory" element={<InventoryStatusPage />} />
           <Route path="/inventoryBeta" element={<InventoryStatusPageBeta />} />
           <Route path="/offtake" element={<OfftakeStatusPage />} />
           <Route path="/agencies" element={<AgencyPage />} />
-          <Route path="/plant" element={<PlantPage plantInfo= {propData}/>} />
+          <Route path="/plant" element={<PlantPage plantInfo={propData} />} />
           <Route path="/department" element={<DepartmentPage />} />
-          <Route path="/cityWiseOfftake" element={<CityWiseOfftakeAnalytics />} />
+          <Route
+            path="/cityWiseOfftake"
+            element={<CityWiseOfftakeAnalytics />}
+          />
           <Route path="/product" element={<ProductPage />} />
           <Route path="/contact" element={<ContactUsPage />} />
           <Route path="/s_admin-reg" element={<SuperAdminReg />} />
@@ -75,7 +107,10 @@ function App() {
           <Route path="/agency-home" element={<AgencyHome />} />
           <Route path="/reset-password" element={<AgencyResetPassword />} />
           <Route path="/plant-login" element={<PlantLogin />} />
-          <Route path="/reset-password-plant" element={<PlantResetPassword />} />
+          <Route
+            path="/reset-password-plant"
+            element={<PlantResetPassword />}
+          />
           <Route path="/plant-home" element={<PlantHome />} />
           <Route path="/Login" element={<LoginNewPage />} />
         </Routes>
@@ -83,7 +118,8 @@ function App() {
       </main>
 
       <footer className="app-footer">
-      © 2025 Indo Enviro Integrated Solutions (P) Limited. All rights reserved.
+        © 2025 Indo Enviro Integrated Solutions (P) Limited. All rights
+        reserved.
       </footer>
     </Router>
   );

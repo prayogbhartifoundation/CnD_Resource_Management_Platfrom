@@ -121,6 +121,9 @@ function ProductPage() {
 
             >
               <h2>{p.prodName}</h2>
+              <div className="action-btns">
+                <button>View Inventory</button>
+              </div>
             </div>
           ))}
         </div>
