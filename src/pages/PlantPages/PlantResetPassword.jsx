@@ -28,7 +28,7 @@ const PlantResetPassword = () => {
     
         try {
           const response = await axios.put(
-            "http://localhost:8081/api/reset_password_plant",
+            "https://cndofftakencr.in/api/reset_password_plant",
             formData
           );
           console.log(response.data.Status);

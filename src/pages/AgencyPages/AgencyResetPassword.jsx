@@ -28,7 +28,7 @@ const AgencyResetPassword = () => {
     
         try {
           const response = await axios.put(
-            "http://localhost:8081/api/reset_password",
+            "https://cndofftakencr.in/api/reset_password",
             formData
           );
           console.log(response.data.Status);

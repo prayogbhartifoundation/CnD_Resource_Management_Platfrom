@@ -17,7 +17,7 @@ const AuthorisedAgencyHome = ({name}) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8081/api/getPlants")
+      .get("https://cndofftakencr.in/api/getPlants")
       .then((res) => {
         console.log(res);
 
@@ -51,7 +51,7 @@ const AuthorisedAgencyHome = ({name}) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8081/api/plantRegister",
+        "https://cndofftakencr.in/api/plantRegister",
         {...formData, agencyId:name}
       );
       console.log(response);

@@ -25,7 +25,7 @@ const AddNewProduct = ({ plantId }) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:8081/api/add_product",
+        "https://cndofftakencr.in/api/add_product",
         formData
       );
       if (response.data.Status === "Success") {

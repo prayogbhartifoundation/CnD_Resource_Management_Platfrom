@@ -51,9 +51,7 @@ function App() {
               </Link>
             </li>
             {/* <li><Link to="/inventory">Inventory Status</Link></li> */}
-            <li>
-              <Link to="/inventoryBeta">Inventory Status</Link>
-            </li>
+            
             <li>
               <Link to="/product">Products</Link>
             </li>

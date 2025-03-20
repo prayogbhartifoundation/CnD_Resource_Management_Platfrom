@@ -12,7 +12,7 @@ const SuperAdminHome = () => {
   axios.defaults.withCredentials = true;
 
   useEffect(()=>{
-    axios.get('http://localhost:8081/superAdminHome')
+    axios.get('https://cndofftakencr.in/superAdminHome')
         .then(res => {
 
             console.log(`res : ${res}`);

@@ -22,7 +22,7 @@ const SuperAdminReg = () => {
         e.preventDefault();
     
         try {
-          const response = await axios.post('http://localhost:8081/api/superAdminRegister', formData);
+          const response = await axios.post('https://cndofftakencr.in/api/superAdminRegister', formData);
           console.log(response);
           
           setResponseMessage(response.data.msg);

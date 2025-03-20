@@ -20,7 +20,7 @@ const UpdateInvetory = ({ plantId }) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8081/api/get_products")
+      .get("https://cndofftakencr.in/api/get_products")
       .then((res) => {
         console.log(res);
         if (res.data.status === "success") {
@@ -36,7 +36,7 @@ const UpdateInvetory = ({ plantId }) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:8081/api/update_inventory",
+        "https://cndofftakencr.in/api/update_inventory",
         formData
       );
       if (response.data.Status === "Success") {

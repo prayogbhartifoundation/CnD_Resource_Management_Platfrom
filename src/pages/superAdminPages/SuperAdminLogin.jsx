@@ -15,7 +15,7 @@ const SuperAdminLogin = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8081/superAdminHome")
+      .get("https://cndofftakencr.in/superAdminHome")
       .then((res) => {
         console.log(`res : ${res}`);
 
@@ -40,7 +40,7 @@ const SuperAdminLogin = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8081/api/superAdminLogin",
+        "https://cndofftakencr.in/api/superAdminLogin",
         formData
       );
       console.log(response.data.Status);

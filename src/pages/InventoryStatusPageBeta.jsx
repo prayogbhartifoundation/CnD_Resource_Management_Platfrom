@@ -19,7 +19,7 @@ function InventoryStatusPageBeta() {
   useEffect(() => {
     const getProds = () => {
       axios
-        .get("http://localhost:8081/api/get_products")
+        .get("https://cndofftakencr.in/api/get_products")
         .then((res) => {
           console.log(res);
           if (res.data.status === "success") {
@@ -33,7 +33,7 @@ function InventoryStatusPageBeta() {
     };
     const getAgencies = () => {
       axios
-        .get("http://localhost:8081/api/getAgencies")
+        .get("https://cndofftakencr.in/api/getAgencies")
         .then((res) => {
           console.log(res);
           if (res.data.Status === "Success") {
@@ -47,7 +47,7 @@ function InventoryStatusPageBeta() {
 
     const getPlants = () => {
       axios
-        .get("http://localhost:8081/api/getPlants")
+        .get("https://cndofftakencr.in/api/getPlants")
         .then((res) => {
           console.log(res);
           if (res.data.Status === "Success") {

@@ -12,7 +12,7 @@ const AgencyHome = () => {
     axios.defaults.withCredentials = true;
   
     useEffect(()=>{
-      axios.get('http://localhost:8081/agencyHome')
+      axios.get('https://cndofftakencr.in/agencyHome')
           .then(res => {
   
               console.log(res);

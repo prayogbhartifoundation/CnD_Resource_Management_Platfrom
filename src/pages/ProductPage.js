@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../styles/ProductPage.css";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function ProductPage() {
   const [prodList, setProdList] = useState([]);
@@ -14,7 +15,7 @@ function ProductPage() {
   useEffect(() => {
     const getProds = async () => {
       try {
-        const res = await axios.get("http://localhost:8081/api/get_products");
+        const res = await axios.get("https://cndofftakencr.in/api/get_products");
         console.log(res.data.status?.toLowerCase());
         if (res.data.status?.toLowerCase() === "success") {
           setProdList(res.data.data);
@@ -29,7 +30,7 @@ function ProductPage() {
 
     const getAgencies = async () => {
       try {
-        const res = await axios.get("http://localhost:8081/api/getAgencies");
+        const res = await axios.get("https://cndofftakencr.in/api/getAgencies");
         console.log(res);
         if (res.data.Status?.toLowerCase() === "success") {
           setAgencyList(res.data.data);
@@ -43,7 +44,7 @@ function ProductPage() {
 
     const getPlants = async () => {
       try {
-        const res = await axios.get("http://localhost:8081/api/getPlants");
+        const res = await axios.get("https://cndofftakencr.in/api/getPlants");
         console.log(res);
         if (res.data.Status?.toLowerCase() === "success") {
           setPlantList(res.data.data);
@@ -86,7 +87,10 @@ function ProductPage() {
       {/* Header Section */}
       <header>
         <h1>Product Name</h1>
+                      <Link className="btn" to="/inventoryBeta">Inventory Status</Link>
         <div className="inp-box">
+        
+            
           <label htmlFor="">🔍</label>
           <input
             type="text"

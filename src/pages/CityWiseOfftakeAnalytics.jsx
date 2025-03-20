@@ -10,7 +10,7 @@ const CityWiseOfftakeAnalytics = () => {
   useEffect(() => {
     const getProds = () => {
       axios
-        .get("http://localhost:8081/api/get_products")
+        .get("https://cndofftakencr.in/api/get_products")
         .then((res) => {
           console.log(res);
           if (res.data.status === "success") {
@@ -24,7 +24,7 @@ const CityWiseOfftakeAnalytics = () => {
     };
     const getAgencies = () => {
       axios
-        .get("http://localhost:8081/api/getAgencies")
+        .get("https://cndofftakencr.in/api/getAgencies")
         .then((res) => {
           console.log(res);
           if (res.data.Status === "Success") {
@@ -37,7 +37,7 @@ const CityWiseOfftakeAnalytics = () => {
     };
     const getPlants = () => {
       axios
-        .get("http://localhost:8081/api/getPlants")
+        .get("https://cndofftakencr.in/api/getPlants")
         .then((res) => {
           console.log(res);
           if (res.data.Status === "Success") {

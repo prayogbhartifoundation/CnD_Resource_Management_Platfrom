@@ -16,7 +16,7 @@ const PlantLogin = () => {
     
       useEffect(() => {
         axios
-          .get("http://localhost:8081/plantHome")
+          .get("https://cndofftakencr.in/plantHome")
           .then((res) => {
             console.log(res);
     
@@ -41,7 +41,7 @@ const PlantLogin = () => {
     
         try {
           const response = await axios.post(
-            "http://localhost:8081/api/plantLogin",
+            "https://cndofftakencr.in/api/plantLogin",
             formData
           );
           console.log(response.data.Status);

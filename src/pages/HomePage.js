@@ -6,6 +6,7 @@ import TopBannerBox from "./HomePageComponents/TopBannerBox";
 import ActionBtnRow from "./HomePageComponents/ActionBtnRow";
 import InfoBox from "./HomePageComponents/InfoBox";
 import TargetConsolidatedChartBox from "./HomePageComponents/TargetConsolidatedChartBox";
+import HomeDataBox from "./HomePageComponents/HomeDataBox";
 
 function HomePage({setPropData}) {
   const [prodList, setProdList] = useState([]);
@@ -17,7 +18,7 @@ function HomePage({setPropData}) {
   useEffect(() => {
     const getProds = () => {
       axios
-        .get("http://localhost:8081/api/get_products")
+        .get("https://cndofftakencr.in/api/get_products")
         .then((res) => {
           console.log(res);
           if (res.data.status === "success") {
@@ -31,7 +32,7 @@ function HomePage({setPropData}) {
     };
     const getAgencies = () => {
       axios
-        .get("http://localhost:8081/api/getAgencies")
+        .get("https://cndofftakencr.in/api/getAgencies")
         .then((res) => {
           console.log(res);
           if (res.data.Status === "Success") {
@@ -44,7 +45,7 @@ function HomePage({setPropData}) {
     };
     const getPlants = () => {
       axios
-        .get("http://localhost:8081/api/getPlants")
+        .get("https://cndofftakencr.in/api/getPlants")
         .then((res) => {
           console.log(res);
           if (res.data.Status === "Success") {
@@ -65,13 +66,21 @@ function HomePage({setPropData}) {
   return (
     <div className="home-page">
       {/* <section>Dashboard</section> */}
+      
       <section className="homePage-overview-details">
         <TopBannerBox plants={plantList} plantOperators={agencyList} products={prodList} setPropData={setPropData}/>
         {/* <InfoBox/> */}
       </section>
+      
       <section className="homePage-overview-details">
         <ActionBtnRow/>
       </section>
+      
+      <section className="homePage-overview-details">
+        <HomeDataBox plants={plantList} plantOperators={agencyList} products={prodList} setPropData={setPropData}/>
+        {/* <InfoBox/> */}
+      </section>
+      
       {/* <section className="homePage-overview-details">
         <TargetConsolidatedChartBox plantOperators={agencyList}/>
       </section> */}

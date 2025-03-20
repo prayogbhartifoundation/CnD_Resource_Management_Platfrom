@@ -44,6 +44,29 @@ header .inp-box input{
   height:30px;
 }
 
+header .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid #b7b5b5;
+  border-radius: 5px;
+  background: #cde8f4;
+  cursor: pointer;
+
+  position: sticky;
+  top: 0;
+
+  box-shadow: 0 -5px 1px 1px rgb(255, 255, 255) ;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+header .btn:hover {
+  background: #b7b5b5;
+}
+
 h1 {
   margin: 0;
 }

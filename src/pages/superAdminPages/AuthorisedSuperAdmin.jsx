@@ -20,7 +20,7 @@ const AuthorisedSuperAdmin = ({ name }) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8081/api/getAgencies")
+      .get("https://cndofftakencr.in/api/getAgencies")
       .then((res) => {
         console.log(res);
 
@@ -54,7 +54,7 @@ const AuthorisedSuperAdmin = ({ name }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8081/api/agencyRegister",
+        "https://cndofftakencr.in/api/agencyRegister",
         formData
       );
       console.log(response);

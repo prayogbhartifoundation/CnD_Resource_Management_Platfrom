@@ -11,7 +11,7 @@ const PlantHome = () => {
     axios.defaults.withCredentials = true;
   
     useEffect(()=>{
-      axios.get('http://localhost:8081/plantHome')
+      axios.get('https://cndofftakencr.in/plantHome')
           .then(res => {
   
               console.log(res);

@@ -1,21 +1,22 @@
 import React, { useState } from "react";
 import "./styles/TargetConsolidatedChartBox.css";
 import ReactApexChart from "react-apexcharts";
+import deptOfftake from "../../data/deptOfftake";
 
 const TargetConsolidatedChartBox = ({ plantOperators }) => {
   const data = [
     { category: "MCD", value: 90, target: 70 },
     { category: "DDA", value: 90, target: 90 },
     { category: "DSIIDC", value: 85, target: 85 },
-    { category: "Irrigation & Flood Control", value: 95, target: 95 },
-    { category: "New Delhi Municipal Council", value: 75, target: 88 },
+    { category: "I&FC", value: 95, target: 95 },
+    { category: "NDMC", value: 75, target: 88 },
   ];
 
-  const categories = data.map((item) => item.category);
-  const values = data.map((item) => item.value);
-  const targets = data.map((item) => item.target);
-  const barColors = data.map((item) =>
-    item.value >= item.target ? "#068df6" : "#ff0000"
+  const categories = deptOfftake.map((item) => item.department);
+  const values = deptOfftake.map((item) => item.offtakeStatus.total_off);
+  const targets = deptOfftake.map((item) => item.annualTarget);
+  const barColors = deptOfftake.map((item) =>
+    item.offtakeStatus.total_off >= item.annualTarget ? "#068df6" : "#ff0000"
   ); // Green if value >= target, else red
 
   const [options, setOptions] = useState({
@@ -49,7 +50,7 @@ const TargetConsolidatedChartBox = ({ plantOperators }) => {
     yaxis: [
       {
         title: {
-          text: "Actual Offtake Values (01.04.24 to 31.01.25)",
+          text: "Annual Offtake Value (MT)",
         },
       },
     ],
@@ -71,12 +72,12 @@ const TargetConsolidatedChartBox = ({ plantOperators }) => {
   return (
     <div className="TargetConsolidatedChartBox">
     
-    <div className="CharttitleBox">
+    {/* <div className="CharttitleBox">
       <span>City Wise Offtake Status (01.04.24 to 31.01.25)</span>
       <select name="" id="">
         <option value="NCR">Delhi NCR</option>
       </select>
-    </div>
+    </div> */}
 
     <div className="main">
       {/* <div className="plantOperatorsList">
@@ -89,7 +90,7 @@ const TargetConsolidatedChartBox = ({ plantOperators }) => {
       </div> */}
 
       <div className="ConsolidatedChartBox">
-        <h4>Target vs. Actual Chart <i style={{fontSize:'13px'}}>(** Sample Data, Actual Data linking to chart is in progress)</i></h4>
+        {/* <h4>Target vs. Actual Chart <i style={{fontSize:'13px'}}>(** Sample Data, Actual Data linking to chart is in progress)</i></h4> */}
         <div className="chartBox">
           <ReactApexChart
             options={options}

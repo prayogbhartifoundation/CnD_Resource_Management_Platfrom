@@ -16,7 +16,7 @@ const AgencyLogin = () => {
     
       useEffect(() => {
         axios
-          .get("http://localhost:8081/agencyHome")
+          .get("https://cndofftakencr.in/agencyHome")
           .then((res) => {
             console.log(res);
     
@@ -41,7 +41,7 @@ const AgencyLogin = () => {
     
         try {
           const response = await axios.post(
-            "http://localhost:8081/api/agencyLogin",
+            "https://cndofftakencr.in/api/agencyLogin",
             formData
           );
           console.log(response.data.Status);

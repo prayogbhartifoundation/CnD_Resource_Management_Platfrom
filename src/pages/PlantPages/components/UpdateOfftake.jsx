@@ -32,7 +32,7 @@ const UpdateOfftake = ({ plantId }) => {
     if (!plantId) return; // Prevent API call if plantId is empty
 
     axios
-      .post("http://localhost:8081/api/getPlant", { plantId }) // Correct body format
+      .post("https://cndofftakencr.in/api/getPlant", { plantId }) // Correct body format
       .then((res) => {
         console.log(res);
         if (res.data.Status === "Success") {
@@ -49,7 +49,7 @@ const UpdateOfftake = ({ plantId }) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:8081/api/update_mohua_status",
+        "https://cndofftakencr.in/api/update_mohua_status",
         formData
       );
       if (response.data.Status === "Success") {
