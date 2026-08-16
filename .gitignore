@@ -11,10 +11,8 @@ node_modules/
 cnd_backend/uploads/
 cnd_backend/doc_uploads/
 
-# Database backups - NEVER commit to public repo
-db-backup/
+# Raw .bson and .dump files (compressed .bson.gz are fine)
 *.dump
-*.bson
 
 # SSL Private Keys - NEVER commit
 *.key
