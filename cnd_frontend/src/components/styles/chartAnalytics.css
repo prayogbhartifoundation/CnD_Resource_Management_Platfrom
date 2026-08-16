@@ -1,0 +1,111 @@
+.chart-container {
+  width: 100%;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.chart-inner {
+  width: 100%;
+  height: 100%;
+}
+
+/* Legend layout */
+.chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+/* Legend visuals */
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.legend-bar {
+  width: 28px;
+  height: 10px;
+  border-radius: 6px;
+  margin-right: 6px;
+}
+
+
+.chart-scroll-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 6px;
+}
+
+.chart-scroll-inner {
+  display: block;
+}
+
+/* Smooth scrolling */
+.chart-scroll-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.chart-scroll-wrapper::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 6px;
+}
+
+.chart-scroll-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.chart-scroll-inner svg {
+  overflow: visible !important;
+}
+
+
+/* Keep readable height */
+@media (max-width: 1080px) {
+  .chart-scroll-wrapper {
+    min-height: 380px;
+  }
+}
+
+@media (max-width: 760px) {
+  .chart-scroll-wrapper {
+    min-height: 420px;
+  }
+}
+
+
+.blue { background: #3b82f6; }
+.green { background: #22c55e; }
+.red { background: #ff0000; }
+.over { background: #007bff; }
+
+/* ✅ 1080px Fix */
+@media (max-width: 1080px) {
+  .chart-container {
+    min-height: 300px;
+  }
+}
+
+/* ✅ 760px Fix */
+@media (max-width: 760px) {
+  .chart-container {
+    min-height: 240px;
+  }
+
+  .legend-item {
+    font-size: 13px;
+  }
+}

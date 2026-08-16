@@ -1,0 +1,30 @@
+
+.fy-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* TRUE CENTER ALIGN */
+  justify-content: center;
+  line-height: 1.2;
+  font-size: 12px;
+  text-align: center;
+}
+
+.fy-sub {
+  white-space: nowrap;
+}
+
+
+.table-wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+table {
+  table-layout: auto;
+}

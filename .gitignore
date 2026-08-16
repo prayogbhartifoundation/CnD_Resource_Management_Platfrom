@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment files - NEVER commit secrets
+.env
+.env.*
+!.env.example
+
+# Upload folders - user data, not code
+cnd_backend/uploads/
+cnd_backend/doc_uploads/
+
+# Database backups - NEVER commit to public repo
+db-backup/
+*.dump
+*.bson
+
+# SSL Private Keys - NEVER commit
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Logs
+*.log
+npm-debug.log*
+
+# Build output
+cnd_frontend/dist/
+cnd_frontend/.vite/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Test/scratch files
+*.cjs
+test_*.js
+query_*.js
+
+# Windows shortcuts
+*.lnk

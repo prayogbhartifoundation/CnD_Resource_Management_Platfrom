@@ -1,0 +1,22 @@
+/* Force overview panel to match banner height */
+.overview-panel {
+  align-items: stretch;
+}
+
+/* Make card fill full height */
+.overview-panel > div {
+  height: 350px;
+}
+
+/* Sync with banner responsive rules */
+@media (max-width: 1080px) {
+  .overview-panel > div {
+    height: 260px;
+  }
+}
+
+@media (max-width: 760px) {
+  .overview-panel > div {
+    height: 220px;
+  }
+}

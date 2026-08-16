@@ -1,0 +1,116 @@
+.dashboard {
+  background: #f3f4f6;
+  padding: 16px;
+}
+
+/* Main layout */
+.dashboard-wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+}
+
+/* Panels */
+.panel {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+/* Titles */
+.panel-title {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  color: #ffffff;
+}
+
+
+/* Desktop layout */
+@media (min-width: 1081px) {
+  .agencies-panel {
+    width: 28%;   /* more space for agencies */
+  }
+
+  .chart-panel {
+    width: 72%;
+  }
+}
+
+
+/* Tablet */
+@media (max-width: 1080px) {
+  .dashboard-wrapper {
+    flex-direction: column;
+  }
+
+  .agencies-panel,
+  .chart-panel {
+    width: 100%;
+  }
+}
+
+/* Agencies container */
+.agencies-box {
+background: linear-gradient(135deg, #029054, #037a48);
+
+  border-radius: 8px;
+  padding: 12px;
+  height: 100%;
+}
+
+/* Scrollable list */
+.agencies-list {
+  margin-top: 10px;
+  max-height: 60vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Individual agency */
+.agency-card {
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+
+.agency-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.agency-card h3 {
+  font-size: 12px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Expanded plant list */
+.plant-list {
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* Single agency mode */
+.agency-single {
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Mobile refinement */
+@media (max-width: 760px) {
+  .agencies-list {
+    max-height: 45vh;
+  }
+
+  .panel-title {
+    font-size: 16px;
+  }
+}

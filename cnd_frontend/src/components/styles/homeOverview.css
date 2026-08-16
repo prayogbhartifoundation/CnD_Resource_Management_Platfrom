@@ -1,0 +1,85 @@
+/* Match banner height */
+.overview-wrapper {
+   height: 360px;
+  padding: 15px 10px 15px 5px ;
+}
+.downloads-wrapper {
+  min-height: 340px;
+  max-height: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 12px;
+
+  
+  
+}
+
+/* Content container */
+.downloads-content {
+  padding: 10px 12px;
+  width: 100%;
+  height: 100%;
+}
+
+/* Scrollable text area */
+.downloads-text {
+  max-height: 240px; /* leaves space for title */
+  font-size: 16px;
+  overflow-y: auto;
+  line-height: 1.6;
+}
+
+.overview-title {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;   /* horizontal center */
+  align-items: center;       /* vertical alignment */
+}
+
+.overview-title h1 {
+  font-size: 26px;
+  font-weight: 300;
+  color: #16a34a;
+  text-align: center;
+  margin: 0;
+}
+
+
+/* Large screens */
+@media (min-width: 1081px) {
+  .downloads-wrapper {
+    /* min-height: 360px; */
+  }
+
+  .downloads-text {
+    max-height: 290px;
+  }
+}
+
+/* 1080px and below */
+@media (max-width: 1080px) {
+  .downloads-wrapper {
+    /* min-height: 260px;
+    max-height: 260px; */
+  }
+
+  .downloads-text {
+    max-height: 160px;
+    font-size: 12px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 760px) {
+  .downloads-wrapper {
+    /* min-height: 220px;
+    max-height: 220px; */
+  }
+
+  .downloads-text {
+    max-height: 130px;
+    font-size: 12px;
+  }
+}
+

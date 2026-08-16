@@ -1,0 +1,496 @@
+/* General Layout */
+.agency-detail-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 95%;
+    /* padding: 1rem; */
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    /* border: 1px solid #000; */
+    margin: auto;
+  }
+  .agency-detail-section{
+    background-color:#F8F9FA;
+    padding-top:50px;
+  }
+  /* Header Section */
+  .header-section {
+    /* background: linear-gradient(to right, #662D91 0.05%, #AC466C 79.07%, #E1594F 99.96%);background-color: #4c4c4c; */
+    color:#325A58;
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+    
+  }
+
+  .plantDetail{
+    font-size: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    /* flex-direction: column; */
+    align-items: flex-start;
+    /* margin-bottom: 15px; */
+    /* border: 1px solid #000; */
+    padding: 5px;
+  }
+
+  .plantDetail span{
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  /* Branding Section Layout */
+  .branding-section {
+    display: grid;
+    grid-template-areas:
+      "logo branding"
+      "incharge branding";
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    /* background-color: #E5F5F5; */
+    padding: 40px 50px;
+    border-radius: 8px;
+    margin: 16px 0;
+  }
+  
+  .head-branding-card {
+    background-color: #ffffff;
+    max-height: fit-content;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: bold;
+    color: rgb(53, 53, 53); 
+    position: relative;
+    box-shadow: 1px 1px 2px 2px #80D3D4;
+  }
+
+  .head-branding-card img{
+    width: 190px;
+    /* border: 1px solid #000; */
+  }
+  
+  .plant-sectiion-list{
+    padding:50px 0px;
+  }
+  
+  
+  .logo-card {
+    grid-area: logo;
+  }
+  
+  .branding-details {
+    position: relative;
+    grid-area: branding;
+    background-color: #e7ebed;
+    /* padding: 10rem; */
+    text-align: center;
+    border-radius: 8px;
+    color: black;
+  }
+  
+  .incharge-card {
+    grid-area: incharge;
+    background-color: #e7ebed;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: bold;
+    color: black;
+  }
+  
+  /* Waste Processing Section */
+  .waste-processing-details {
+    
+    padding: 40px 50px;
+    border-radius: 8px;
+    margin: 16px 0;
+    /* background-color: #54c0ca; */
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 1.5rem;
+    color:#325A58;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .plant-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+    justify-content: center;
+  }
+  
+  .waste-details-layout {
+    display: grid;
+    grid-template-areas:
+      "capacity material"
+      "contact material"
+      "operation operation";
+    grid-template-columns: 1fr 2fr;
+    gap: 16px;
+  }
+  
+  .detail-card {
+    background-color: #e7ebed;
+    padding: 50px;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: bold;
+    color: black;
+    position: relative;
+    box-shadow: 4px 4px 5px #495057;
+  }
+
+  .detail-card p span{
+    font-weight: 600;
+    font-size: 0.8rem;
+  }
+  
+  .waste-processing-section{
+
+    background-color:#F8F9FA;
+    padding-top:50px;
+  }
+
+
+  .waste-capacity-card {
+    grid-area: capacity;
+  }
+  
+  .material-quantities-card {
+    grid-area: material;
+  }
+
+
+  .material-quantities-card table {
+    border-collapse: collapse;
+    font-weight: normal;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+    table-layout: fixed;
+    width: 100%;
+  }
+  
+  .material-quantities-card thead {
+    background: #1AA5A7;
+    color: white;
+    font-weight: 600;
+  }
+  
+  .material-quantities-card th, 
+  .material-quantities-card td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .material-quantities-card th{
+    text-align: center;
+  }
+  .material-quantities-card td{
+  color: #484747;
+  }
+
+  .col-1{
+    width:60px;
+  }
+ 
+  .col-3{
+    width:100px;
+  }
+  
+  .material-quantities-card p{
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .material-quantities-card tbody {
+    display: block;
+    max-height: 470px; /* ✅ Scrollable tbody */
+    overflow: auto;
+  }
+  
+  .material-quantities-card thead, 
+  .material-quantities-card tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+  
+  .material-quantities-card tbody tr:nth-child(even) {
+    background: #f8f9fa; /* ✅ Zebra striping */
+  }
+  
+  .material-quantities-card tbody tr:hover {
+    background: #e9ecef; /* ✅ Hover effect */
+  }
+  
+  
+  .contact-details-card {
+    grid-area: contact;
+  }
+
+  .operation-details-card img{
+    max-width: 100%;
+    max-height: 400px;
+  }
+  
+  .operation-details-card {
+    grid-area: operation;
+    position: relative;
+    /* padding: 10rem; */
+  }
+  
+  /* Compliance Section */
+  /* .compliance-section {
+   
+  } */
+  
+  .compliance-section h3 {
+    color: #325A58;
+    /* background: linear-gradient(to right, #662D91 0.05%, #AC466C 79.07%, #E1594F 99.96%); */
+    padding: 1rem;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+    
+  .doc-button {
+    padding: 10px 16px;
+    background-color: #07426a;
+    margin: 30px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    font-weight:500;
+    text-align: center;
+    min-width: fit-content;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 2px 2px 4px 2px rgb(222, 210, 255);
+  }
+  
+  .doc-button:hover {
+    background-color:#063A5D;
+  }
+
+
+  .editField{
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 1px solid #000;
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: #a09f9f9b;
+  }
+
+  .editField input{
+    max-height: fit-content;
+    padding: 5px;
+    min-width: 70%;
+    max-width: 70%;
+    margin: auto;
+    background-color: #fff;
+    z-index: 199;
+    box-shadow: 0 0 20px 2px rgba(247, 247, 208, 0.388);
+    /* border: 4px solid #000; */
+  }
+
+
+  .detail-card.contact-details-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 20px 0 0 0;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .section-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .contact-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .contact-table th,
+  .contact-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    font-size: 16px;
+  }
+  
+  .contact-table th {
+    background-color: #1AA5A7;
+    font-weight: 600;
+    color: #ffffff;
+    text-align: center;
+  }
+  .contact-table td {
+    /* background-color: #f8f9fa; */
+    font-weight: 600;
+    color: #484747;
+  }
+  
+  .contact-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .no-data {
+    color: #888;
+    font-style: italic;
+    margin-top: 10px;
+  }
+  
+
+  .document-section{
+    padding:40px 50px;
+  }
+
+
+  .compliance-section {
+    border: 1px solid #ddd;
+    padding: 40px 24px;
+    border-radius: 12px;
+    margin-top: 20px;
+    box-shadow: 1px 1px 2px 2px #80D3D4;
+    text-align: center;
+    position: relative;
+  }
+  
+  .compliance-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #2c3e50;
+  }
+  
+  .doc-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 16px;
+    max-height: fit-content;
+    overflow: auto;
+  }
+  
+  .no-docs {
+    color: #888;
+    font-style: italic;
+    margin-top: 10px;
+  }
+  
+  .upload-input input[type="file"] {
+    margin-top: 10px;
+    padding: 6px 0;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  /* Responsive Adjustments */
+  
+  /* Large Screens (1024px and above) */
+  @media (min-width: 1024px) {
+    .branding-section {
+      grid-template-columns: 1fr 3fr;
+      gap: 2rem;
+    }
+  
+    .waste-details-layout {
+      grid-template-columns: 1fr 3fr;
+      gap: 2rem;
+    }
+  
+    .detail-card {
+      font-size: 1.2rem;
+    }
+  }
+  
+  /* Tablet View (768px and below) */
+  @media (max-width: 768px) {
+    .branding-section, .waste-details-layout {
+      grid-template-areas:
+        "logo"
+        "branding"
+        "incharge";
+      grid-template-columns: 1fr;
+    }
+  
+    .branding-details, .detail-card {
+      padding: 2rem;
+    }
+  
+    .section-title {
+      font-size: 1.25rem;
+    }
+  
+    .doc-buttons {
+      flex-direction: column;
+      gap: 8px;
+    }
+  
+    .doc-button {
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Mobile View (480px and below) */
+  @media (max-width: 480px) {
+    .agency-detail-page {
+      padding: 0.25rem;
+    }
+  
+    .branding-card, .detail-card {
+      padding: 1rem;
+      font-size: 0.8rem;
+    }
+  
+    .doc-buttons {
+      gap: 4px;
+    }
+  
+    .doc-button {
+      padding: 10px;
+      font-size: 0.8rem;
+      min-width: 100px;
+    }
+  }
+  
